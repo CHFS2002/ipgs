@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chfs-en.hzau.edu.cn/IPGS/sitemap.xml

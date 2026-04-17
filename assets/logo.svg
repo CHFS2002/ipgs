@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="IPGS">
+  <defs>
+    <linearGradient id="ipgsG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14532D"/>
+      <stop offset="100%" stop-color="#1B6B3A"/>
+    </linearGradient>
+  </defs>
+  <!-- Green disc -->
+  <circle cx="32" cy="32" r="30" fill="url(#ipgsG)"/>
+  <!-- Gold ring -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#B8860B" stroke-width="2"/>
+  <!-- Graft symbol: scion (top) meeting rootstock (bottom) with gold union band -->
+  <!-- Scion stem -->
+  <path d="M32 12 L32 28" stroke="#FAFAF5" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- Scion leaves -->
+  <path d="M32 18 C 24 16, 21 12, 22 7 C 27 8, 31 11, 32 18 Z" fill="#4A7C59"/>
+  <path d="M32 22 C 40 20, 43 16, 42 11 C 37 12, 33 15, 32 22 Z" fill="#4A7C59"/>
+  <!-- Union band (gold) -->
+  <rect x="24" y="28" width="16" height="6" rx="1.5" fill="#B8860B"/>
+  <!-- Rootstock stem -->
+  <path d="M32 34 L32 48" stroke="#FAFAF5" stroke-width="3.2" stroke-linecap="round"/>
+  <!-- Roots -->
+  <path d="M32 48 C 28 52, 24 54, 20 56" stroke="#FAFAF5" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M32 48 C 36 52, 40 54, 44 56" stroke="#FAFAF5" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M32 48 L32 56" stroke="#FAFAF5" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+</svg>
