@@ -1,0 +1,47 @@
+# IPGS .htaccess — Apache config for /IPGS deployment
+# Safe to upload; ignored on Nginx.
+
+# --- Serve a friendly 404 ---
+ErrorDocument 404 /IPGS/404.html
+
+# --- Default charset ---
+AddDefaultCharset UTF-8
+
+# --- Gzip / deflate ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# --- Cache headers ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 10 minutes"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+</IfModule>
+
+# --- Security headers ---
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  # Enable HSTS when IPGS is served over HTTPS only:
+  # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# --- Pretty URLs: strip .html extension (optional) ---
+# Uncomment to allow /IPGS/about instead of /IPGS/about.html
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteBase /IPGS/
+#   RewriteCond %{REQUEST_FILENAME} !-d
+#   RewriteCond %{REQUEST_FILENAME}.html -f
+#   RewriteRule ^([^.]+)$ $1.html [L]
+# </IfModule>

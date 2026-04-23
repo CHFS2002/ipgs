@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People &amp; Institutions — IPGS</title>
+<meta name="description" content="IPGS leadership, founding members, working group heads, scientific advisory committee, and founding institutions — spanning 8 countries across 4 continents.">
+<meta name="theme-color" content="#14532D">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css">
+<style>
+  /* Map container */
+  #ipgs-world-map {
+    width: 100%;
+    height: 440px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--ipgs-green-100);
+    margin-top: 2rem;
+  }
+  /* Override jsvectormap tooltip */
+  .jvm-tooltip {
+    font-family: var(--font-sans) !important;
+    font-size: .82rem !important;
+    padding: .35rem .75rem !important;
+    border-radius: var(--radius-sm) !important;
+    background: var(--ipgs-stone) !important;
+    color: #fff !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+  /* Map legend */
+  .map-legend {
+    display: flex;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    font-size: .83rem;
+    color: var(--ipgs-stone-500);
+    align-items: center;
+  }
+  .map-legend-item { display: flex; align-items: center; gap: .45rem; }
+  .legend-swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--ipgs-gold); border: 2px solid #fff; box-shadow: 0 0 0 1px var(--ipgs-gold); flex-shrink: 0; }
+  /* Role cards */
+  .role-card { text-align: center; padding: 1.75rem 1.25rem; }
+  .role-avatar {
+    width: 3.5rem; height: 3.5rem; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+    margin: 0 auto .9rem;
+  }
+  .role-name { font-size: 1rem; font-weight: 600; color: var(--ipgs-stone); margin: .4rem 0 .25rem; }
+  .role-affil { font-size: .82rem; color: var(--ipgs-stone-500); line-height: 1.5; margin: 0; }
+  /* Institution cards */
+  .inst-card { display: flex; gap: 1rem; align-items: flex-start; }
+  .inst-flag { font-size: 1.6rem; flex-shrink: 0; line-height: 1.1; }
+  /* Region heading */
+  .region-heading { color: var(--ipgs-green); font-size: 1.1rem; margin: 2.5rem 0 1rem; border-bottom: 2px solid var(--ipgs-green-100); padding-bottom: .5rem; }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand" aria-label="IPGS home">
+      <img src="../assets/logo.svg" alt="" class="brand-mark" width="44" height="44">
+      <span class="brand-text"><span class="short">IPGS</span><span class="long">International Plant Grafting Society</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="main-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../about/people.html" aria-current="page">Members</a></li>
+        
+        <li><a href="../research.html">Research</a></li>
+        <li><a href="../events.html">Events</a></li>
+        <li><a href="../knowledge.html">Knowledge</a></li>
+        <li><a href="../news.html">News</a></li>
+        <li><a href="../contact.html">Join Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Page header -->
+  <section class="page-header">
+    <div class="container">
+      <nav class="breadcrumb"><a href="../index.html">Home</a> / <a href="../about.html">About</a> / People &amp; Institutions</nav>
+      <h1>People &amp; Institutions</h1>
+      <p class="lead">The researchers, institutions, and leadership structure of IPGS — spanning 8 countries across 4 continents at founding.</p>
+    </div>
+  </section>
+
+  <!-- ── World map ─────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Global canvas</span>
+      <h2>Where our members are</h2>
+      <p style="max-width:68ch">Founding members represent institutions across Asia, Europe, South America, and Oceania. Highlighted countries have at least one founding member institution; gold markers show individual institutions.</p>
+
+      <div id="ipgs-world-map" role="img" aria-label="World map showing IPGS founding member countries highlighted in green with gold institution markers"></div>
+
+      <div class="map-legend">
+        <div class="map-legend-item">
+          <div class="legend-swatch" style="background:var(--ipgs-green)"></div>
+          Founding member country
+        </div>
+        <div class="map-legend-item">
+          <div class="legend-dot"></div>
+          Member institution
+        </div>
+      </div>
+
+      <div class="grid grid-4" style="margin-top:2.5rem">
+        <div class="metric"><span class="value">8</span><span class="label">founding member countries</span></div>
+        <div class="metric"><span class="value">4</span><span class="label">continents represented</span></div>
+        <div class="metric"><span class="value">15</span><span class="label">founding member slots</span></div>
+        <div class="metric"><span class="value">7</span><span class="label">thematic working groups</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Board of Directors ─────────────────────────────────────────────────── -->
+  <section class="section section-light" id="board">
+    <div class="container">
+      <div style="max-width:700px;margin:0 auto 2.5rem">
+        <span class="eyebrow">Governance</span>
+        <h2>Board of Directors</h2>
+        <p>The Board is constituted at the Founding Meeting (7–10 May 2026). Positions listed as TBC will be elected or appointed at that meeting. All terms are four years.</p>
+      </div>
+
+      <!-- Chair + General Secretary -->
+      <div class="grid grid-2" style="max-width:680px;margin:0 auto 2.5rem">
+        <div class="card role-card">
+          <div class="role-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div style="margin-bottom:.6rem"><span class="chip">Chair · President</span></div>
+          <div class="role-name">To be elected</div>
+          <p class="role-affil">Elected by the General Assembly at the Founding Meeting · 4-year term</p>
+        </div>
+        <div class="card role-card">
+          <div class="role-avatar" style="background:var(--ipgs-gold-100);color:#5a3f00">XQ</div>
+          <div style="margin-bottom:.6rem"><span class="chip chip-gold">General Secretary</span></div>
+          <div class="role-name">Prof. Xu Qiang</div>
+          <p class="role-affil">Dean &amp; Professor<br>College of Horticulture &amp; Forestry Sciences<br>Huazhong Agricultural University (HZAU)<br>🇨🇳 China · Ex officio · 4-year term</p>
+        </div>
+      </div>
+
+      <!-- Regional Co-Chairs -->
+      <h3 style="text-align:center;margin-bottom:1.5rem;font-size:1.05rem;color:var(--ipgs-stone-500);font-weight:500;letter-spacing:.02em">Co-Chairs &amp; Regional Directors — 6 seats</h3>
+      <div class="grid grid-3">
+        <div class="card role-card">
+          <div class="role-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div style="margin-bottom:.6rem"><span class="chip">Co-Chair · Asia-Pacific</span></div>
+          <div class="role-name">To be elected</div>
+          <p class="role-affil">Asia-Pacific region<br>Elected at Founding Meeting</p>
+        </div>
+        <div class="card role-card">
+          <div class="role-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div style="margin-bottom:.6rem"><span class="chip">Co-Chair · East Asia</span></div>
+          <div class="role-name">To be elected</div>
+          <p class="role-affil">East Asia region<br>Elected at Founding Meeting</p>
+        </div>
+        <div class="card role-card">
+          <div class="role-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div style="margin-bottom:.6rem"><span class="chip">Co-Chair · Europe</span></div>
+          <div class="role-name">To be elected</div>
+          <p class="role-affil">Europe region<br>Elected at Founding Meeting</p>
+        </div>
+        <div class="card role-card">
+          <div class="role-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div style="margin-bottom:.6rem"><span class="chip">Co-Chair · Americas</span></div>
+          <div class="role-name">To be elected</div>
+          <p class="role-affil">Americas region<br>Elected at Founding Meeting</p>
+        </div>
+        <div class="card role-card">
+          <div class="role-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div style="margin-bottom:.6rem"><span class="chip">Co-Chair · Africa / MENA</span></div>
+          <div class="role-name">To be elected</div>
+          <p class="role-affil">Africa / MENA region<br>Elected at Founding Meeting</p>
+        </div>
+        <div class="card role-card">
+          <div class="role-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div style="margin-bottom:.6rem"><span class="chip">Co-Chair · Oceania</span></div>
+          <div class="role-name">To be elected</div>
+          <p class="role-affil">Oceania region<br>Elected at Founding Meeting</p>
+        </div>
+      </div>
+
+      <!-- Secretaries note -->
+      <div class="card" style="margin-top:2rem;background:var(--ipgs-green-100);border-color:transparent">
+        <strong>Regional Secretaries — 6 seats</strong>
+        <p class="muted" style="margin:.4rem 0 0">One Secretary per region, supporting each Co-Chair and coordinating regional activities. All six positions will be appointed at the Founding Meeting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Working Group Leadership ───────────────────────────────────────────── -->
+  <section class="section" id="working-groups">
+    <div class="container">
+      <span class="eyebrow">Working Groups</span>
+      <h2>Working Group Leadership</h2>
+      <p style="max-width:68ch">Each of the seven thematic Working Groups is led by an elected Head. Heads participate in the Board in a non-voting capacity unless delegated. All positions will be constituted at the Founding Meeting.</p>
+      <div class="grid grid-3" style="margin-top:2rem">
+        <div class="card wg-card">
+          <span class="wg-tag">WG 1</span>
+          <h3 style="margin-top:.5rem">Grafting Biology</h3>
+          <p class="muted" style="font-size:.82rem">Molecular interactions at the graft union, epigenetic reprogramming, and systems biology.</p>
+          <p class="muted" style="margin-top:.75rem;font-size:.82rem">Head: <strong>To be elected</strong></p>
+        </div>
+        <div class="card wg-card">
+          <span class="wg-tag">WG 2</span>
+          <h3 style="margin-top:.5rem">Climate-Adaptive Grafting</h3>
+          <p class="muted" style="font-size:.82rem">Drought, heat, salinity, and waterlogging tolerance through strategic rootstock selection.</p>
+          <p class="muted" style="margin-top:.75rem;font-size:.82rem">Head: <strong>To be elected</strong></p>
+        </div>
+        <div class="card wg-card">
+          <span class="wg-tag">WG 3</span>
+          <h3 style="margin-top:.5rem">Soil Health &amp; Biotic Stress</h3>
+          <p class="muted" style="font-size:.82rem">Grafting-mediated resistance to soilborne pathogens and nematodes.</p>
+          <p class="muted" style="margin-top:.75rem;font-size:.82rem">Head: <strong>To be elected</strong></p>
+        </div>
+        <div class="card wg-card">
+          <span class="wg-tag">WG 4</span>
+          <h3 style="margin-top:.5rem">Yield, Quality &amp; Nutrition</h3>
+          <p class="muted" style="font-size:.82rem">Effects on yield, flavor, nutritional composition, and post-harvest performance.</p>
+          <p class="muted" style="margin-top:.75rem;font-size:.82rem">Head: <strong>To be elected</strong></p>
+        </div>
+        <div class="card wg-card">
+          <span class="wg-tag">WG 5</span>
+          <h3 style="margin-top:.5rem">Mechanization &amp; AI</h3>
+          <p class="muted" style="font-size:.82rem">Robotic grafting, machine vision, and AI-assisted compatibility matching.</p>
+          <p class="muted" style="margin-top:.75rem;font-size:.82rem">Head: <strong>To be elected</strong></p>
+        </div>
+        <div class="card wg-card">
+          <span class="wg-tag">WG 6</span>
+          <h3 style="margin-top:.5rem">Standardization &amp; Protocols</h3>
+          <p class="muted" style="font-size:.82rem">Harmonized protocols and the MIGE standard for reproducible experimentation.</p>
+          <p class="muted" style="margin-top:.75rem;font-size:.82rem">Head: <strong>To be elected</strong></p>
+        </div>
+        <div class="card wg-card">
+          <span class="wg-tag">WG 7</span>
+          <h3 style="margin-top:.5rem">Capacity Building &amp; Technology Transfer</h3>
+          <p class="muted" style="font-size:.82rem">Training programs, curriculum, fellowships, and technology transfer.</p>
+          <p class="muted" style="margin-top:.75rem;font-size:.82rem">Head: <strong>To be elected</strong></p>
+        </div>
+        <div class="card" style="display:flex;align-items:center;justify-content:center;background:var(--ipgs-green-100);border-style:dashed">
+          <a href="../research.html" class="btn btn-outline-green">Full Working Group details →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Scientific Advisory Committee ─────────────────────────────────────── -->
+  <section class="section section-light" id="sac">
+    <div class="container">
+      <span class="eyebrow">Advisory</span>
+      <h2>Scientific Advisory Committee</h2>
+      <p style="max-width:72ch">The SAC provides independent scientific oversight and peer review of Flagship proposals, authors the annual <em>State of Grafting Science</em>, and reviews SOPs before publication. Members are senior scientists drawn from outside the founding cohort, covering all seven thematic areas. Composition will be confirmed following the Founding Meeting.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem 2.5rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--ipgs-green-100)">
+
+        <div>
+          <div style="font-weight:600;color:var(--ipgs-stone)">Name TBC</div>
+          <div style="font-size:.82rem;color:var(--ipgs-stone-500);margin-top:.15rem">Compatibility mechanisms · TBC</div>
+        </div>
+        <div>
+          <div style="font-weight:600;color:var(--ipgs-stone)">Name TBC</div>
+          <div style="font-size:.82rem;color:var(--ipgs-stone-500);margin-top:.15rem">Rootstock breeding · TBC</div>
+        </div>
+        <div>
+          <div style="font-weight:600;color:var(--ipgs-stone)">Name TBC</div>
+          <div style="font-size:.82rem;color:var(--ipgs-stone-500);margin-top:.15rem">Molecular signaling · TBC</div>
+        </div>
+        <div>
+          <div style="font-weight:600;color:var(--ipgs-stone)">Name TBC</div>
+          <div style="font-size:.82rem;color:var(--ipgs-stone-500);margin-top:.15rem">Disease resistance &amp; soil health · TBC</div>
+        </div>
+        <div>
+          <div style="font-weight:600;color:var(--ipgs-stone)">Name TBC</div>
+          <div style="font-size:.82rem;color:var(--ipgs-stone-500);margin-top:.15rem">Climate adaptation · TBC</div>
+        </div>
+        <div>
+          <div style="font-weight:600;color:var(--ipgs-stone)">Name TBC</div>
+          <div style="font-size:.82rem;color:var(--ipgs-stone-500);margin-top:.15rem">Phenotyping &amp; data standards · TBC</div>
+        </div>
+        <div>
+          <div style="font-weight:600;color:var(--ipgs-stone)">Name TBC</div>
+          <div style="font-size:.82rem;color:var(--ipgs-stone-500);margin-top:.15rem">Technology transfer · TBC</div>
+        </div>
+        <div>
+          <div style="font-weight:600;color:var(--ipgs-stone)">Name TBC</div>
+          <div style="font-size:.82rem;color:var(--ipgs-stone-500);margin-top:.15rem">Food systems &amp; agronomy · TBC</div>
+        </div>
+        <div>
+          <div style="font-weight:600;color:var(--ipgs-stone)">Name TBC <span style="font-size:.78rem;font-weight:400;color:var(--ipgs-stone-400)">(early-career)</span></div>
+          <div style="font-size:.82rem;color:var(--ipgs-stone-500);margin-top:.15rem">Discipline TBC · TBC</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Founding Members ───────────────────────────────────────────────────── -->
+  <section class="section section-paper" id="founding-members">
+    <div class="container">
+      <span class="eyebrow">Founding cohort</span>
+      <h2>Founding Members</h2>
+      <p class="lead" style="max-width:70ch">Senior researchers who attended the 2026 Wuhan Founding Meeting — in person or online — and whose institutions serve as the founding pillars of IPGS.</p>
+      <div class="grid grid-2" style="margin-top:2rem">
+        <div class="profile">
+          <div class="profile-avatar" style="background:var(--ipgs-gold-100);color:#5a3f00">XQ</div>
+          <div><div class="profile-name">Prof. Xu Qiang <span class="chip chip-gold">Host</span></div><p class="profile-affil">College of Horticulture &amp; Forestry Sciences, HZAU</p><span class="profile-country">🇨🇳 China</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar">EG</div>
+          <div><div class="profile-name">Prof. Eduardo Augusto Girardi</div><p class="profile-affil">Embrapa Mandioca e Fruticultura, Cruz das Almas</p><span class="profile-country">🇧🇷 Brazil</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar">FB</div>
+          <div><div class="profile-name">Prof. Ferdinando Branca</div><p class="profile-affil">University of Catania</p><span class="profile-country">🇮🇹 Italy</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar">FP</div>
+          <div><div class="profile-name">Dr. Francisco Pérez-Alfocea</div><p class="profile-affil">CEBAS-CSIC, Department of Plant Nutrition, Murcia</p><span class="profile-country">🇪🇸 Spain</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar">AK</div>
+          <div><div class="profile-name">Prof. Athanasios Koukounaras</div><p class="profile-affil">Aristotle University of Thessaloniki</p><span class="profile-country">🇬🇷 Greece</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar">HY</div>
+          <div><div class="profile-name">Prof. Halit Yetisir</div><p class="profile-affil">Erciyes University, Faculty of Agriculture</p><span class="profile-country">🇹🇷 Türkiye</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar">AB</div>
+          <div><div class="profile-name">Dr. Andrea Bassi <span class="chip" style="background:#eff6ff;color:#1d4ed8;font-size:.65rem">Online</span></div><p class="profile-affil">Politecnico di Milano, Piazza Leonardo da Vinci, Italy</p><span class="profile-country">🇮🇹 Italy</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar">SC</div>
+          <div><div class="profile-name">Dr. Sarah Jane Cookson <span class="chip" style="background:#eff6ff;color:#1d4ed8;font-size:.65rem">Online</span></div><p class="profile-affil">French National Institute for Agriculture, Food, and Environment (INRAE), France</p><span class="profile-country">🇫🇷 France</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar">JB</div>
+          <div><div class="profile-name">Dr. Jean Carlos Bettoni</div><p class="profile-affil">Lincoln University, New Zealand</p><span class="profile-country">🇳🇿 New Zealand</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div><div class="profile-name">To be confirmed <span class="chip" style="background:#f0fdf4;color:#14532d;font-size:.65rem">Invited</span></div><p class="profile-affil">China Agricultural University, Beijing</p><span class="profile-country">🇨🇳 China</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div><div class="profile-name">To be confirmed <span class="chip" style="background:#f0fdf4;color:#14532d;font-size:.65rem">Invited</span></div><p class="profile-affil">Zhejiang University, Hangzhou</p><span class="profile-country">🇨🇳 China</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div><div class="profile-name">To be confirmed <span class="chip" style="background:#f0fdf4;color:#14532d;font-size:.65rem">Invited</span></div><p class="profile-affil">South China Agricultural University, Guangzhou</p><span class="profile-country">🇨🇳 China</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div><div class="profile-name">To be confirmed <span class="chip" style="background:#f0fdf4;color:#14532d;font-size:.65rem">Invited</span></div><p class="profile-affil">Northwest A&amp;F University, Yangling</p><span class="profile-country">🇨🇳 China</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div><div class="profile-name">To be confirmed <span class="chip" style="background:#f0fdf4;color:#14532d;font-size:.65rem">Invited</span></div><p class="profile-affil">Chinese Academy of Agricultural Sciences, Beijing</p><span class="profile-country">🇨🇳 China</span></div>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar" style="background:var(--ipgs-green-100);color:var(--ipgs-green)">TBC</div>
+          <div><div class="profile-name">To be confirmed <span class="chip" style="background:#f0fdf4;color:#14532d;font-size:.65rem">Invited</span></div><p class="profile-affil">Beijing Academy of Agriculture &amp; Forestry Sciences</p><span class="profile-country">🇨🇳 China</span></div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:2rem">IPGS is committed to global representation across all continents. Founding membership remains open to institutions worldwide. <a href="../contact.html">Contact the Secretariat</a> to express interest.</p>
+    </div>
+  </section>
+
+  <!-- ── Founding Institutions ──────────────────────────────────────────────── -->
+  <section class="section" id="institutions">
+    <div class="container">
+      <span class="eyebrow">Institutions</span>
+      <h2>Founding Institutions</h2>
+      <p style="max-width:68ch">One institutional card per founding member institution, organized by continent. Institutions marked TBC have a confirmed invitation pending formal designation.</p>
+
+      <h3 class="region-heading">Asia — China</h3>
+      <div class="grid grid-3">
+        <div class="card inst-card">
+          <div class="inst-flag">🇨🇳</div>
+          <div><strong>Huazhong Agricultural University (HZAU)</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Wuhan, Hubei · Host institution &amp; Secretariat</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇨🇳</div>
+          <div><strong>China Agricultural University</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Beijing</p><span class="chip" style="background:#f0fdf4;color:#14532d">Invited · TBC</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇨🇳</div>
+          <div><strong>Zhejiang University</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Hangzhou, Zhejiang</p><span class="chip" style="background:#f0fdf4;color:#14532d">Invited · TBC</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇨🇳</div>
+          <div><strong>South China Agricultural University</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Guangzhou, Guangdong</p><span class="chip" style="background:#f0fdf4;color:#14532d">Invited · TBC</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇨🇳</div>
+          <div><strong>Northwest A&amp;F University</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Yangling, Shaanxi</p><span class="chip" style="background:#f0fdf4;color:#14532d">Invited · TBC</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇨🇳</div>
+          <div><strong>Chinese Academy of Agricultural Sciences (CAAS)</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Beijing</p><span class="chip" style="background:#f0fdf4;color:#14532d">Invited · TBC</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇨🇳</div>
+          <div><strong>Beijing Academy of Agriculture &amp; Forestry Sciences</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Beijing</p><span class="chip" style="background:#f0fdf4;color:#14532d">Invited · TBC</span></div>
+        </div>
+      </div>
+
+      <h3 class="region-heading">Europe</h3>
+      <div class="grid grid-3">
+        <div class="card inst-card">
+          <div class="inst-flag">🇮🇹</div>
+          <div><strong>University of Catania</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Catania, Sicily, Italy</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇮🇹</div>
+          <div><strong>Politecnico di Milano</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Milan, Italy · Online participation</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇪🇸</div>
+          <div><strong>CEBAS-CSIC</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Murcia, Spain · Dept. of Plant Nutrition</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇬🇷</div>
+          <div><strong>Aristotle University of Thessaloniki</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Thessaloniki, Greece</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇹🇷</div>
+          <div><strong>Erciyes University</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Kayseri, Türkiye · Faculty of Agriculture</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇫🇷</div>
+          <div><strong>INRAE</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">France · Online participation</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+      </div>
+
+      <h3 class="region-heading">South America</h3>
+      <div class="grid grid-3">
+        <div class="card inst-card">
+          <div class="inst-flag">🇧🇷</div>
+          <div><strong>Embrapa Mandioca e Fruticultura</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Cruz das Almas, Bahia, Brazil</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+      </div>
+
+      <h3 class="region-heading">Oceania</h3>
+      <div class="grid grid-3">
+        <div class="card inst-card">
+          <div class="inst-flag">🇳🇿</div>
+          <div><strong>Lincoln University</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Christchurch, New Zealand</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:2.5rem;background:var(--ipgs-green-100);border-color:transparent">
+        <p class="muted" style="margin:0"><strong>Open to all continents.</strong> IPGS is built for global reach. Founding institutional membership is open to universities and national research institutes worldwide. <a href="../contact.html">Contact the Secretariat</a> to express interest.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Get involved CTA ────────────────────────────────────────────────── -->
+  <section class="section section-green">
+    <div class="container">
+      <div style="max-width:640px;margin:0 auto;text-align:center">
+        <span class="eyebrow" style="color:var(--ipgs-gold-400)">Get involved</span>
+        <h2 style="color:white">Ready to join IPGS?</h2>
+        <p style="color:rgba(255,255,255,.88);max-width:52ch;margin:0 auto 1.75rem">Applications are reviewed twice yearly by the Board — April and October. Submit your expression of interest and the Secretariat will guide you through the process.</p>
+        <a href="../contact.html" class="btn btn-primary">Apply to join IPGS →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand-text">IPGS</div><p class="footer-address">International Plant Grafting Society<br>Secretariat · HZAU College of Horticulture &amp; Forestry Sciences<br>Wuhan 430070, Hubei, China</p></div>
+      <div><h4>About</h4><ul><li><a href="../about.html">About IPGS</a></li><li><a href="governance.html">Governance</a></li><li><a href="people.html" aria-current="page">People &amp; Institutions</a></li><li><a href="roadmap.html">Roadmap</a></li></ul></div>
+      <div><h4>Work</h4><ul><li><a href="../research.html">Research</a></li><li><a href="../knowledge.html">Knowledge Commons</a></li><li><a href="../events.html">Events</a></li></ul></div>
+      <div><h4>Engage</h4><ul><li><a href="../contact.html">Join Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div>© 2026 International Plant Grafting Society</div><ul><li><a href="../privacy.html">Privacy</a></li><li><a href="../code-of-conduct.html">Code of Conduct</a></li></ul></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"></script>
+<script>
+(function () {
+  var markers = [
+    { name: 'HZAU-CHFS · Wuhan, China',                    coords: [30.47,  114.35] },
+    { name: 'Embrapa · Cruz das Almas, Brazil',             coords: [-12.67, -39.09] },
+    { name: 'University of Catania · Italy',                coords: [37.50,   15.09] },
+    { name: 'Politecnico di Milano · Italy',                coords: [45.46,    9.19] },
+    { name: 'CEBAS-CSIC · Murcia, Spain',                   coords: [37.99,   -1.13] },
+    { name: 'Aristotle University · Thessaloniki, Greece',  coords: [40.63,   22.96] },
+    { name: 'Erciyes University · Kayseri, Türkiye',        coords: [38.73,   35.50] },
+    { name: 'INRAE · France',                               coords: [47.00,    2.35] },
+    { name: 'Lincoln University · New Zealand',             coords: [-43.64, 172.47] },
+    { name: 'China Agricultural University · Beijing',      coords: [39.95,  116.20] },
+    { name: 'Zhejiang University · Hangzhou',               coords: [30.26,  120.15] },
+    { name: 'South China Agricultural University · Guangzhou', coords: [23.16, 113.36] },
+    { name: 'Northwest A&F University · Yangling',          coords: [34.27,  108.07] },
+    { name: 'CAAS · Beijing',                               coords: [39.93,  116.50] },
+    { name: 'Beijing Academy of Agriculture & Forestry Sciences', coords: [40.02, 116.25] }
+  ];
+
+  var memberLabels = {
+    CN: 'China', BR: 'Brazil', IT: 'Italy', ES: 'Spain',
+    GR: 'Greece', TR: 'Türkiye', FR: 'France', NZ: 'New Zealand'
+  };
+
+  new jsVectorMap({
+    selector: '#ipgs-world-map',
+    map: 'world',
+    backgroundColor: 'transparent',
+    zoomOnScroll: false,
+    regionsSelectable: false,
+    markersSelectable: false,
+    selectedRegions: ['CN', 'BR', 'IT', 'ES', 'GR', 'TR', 'FR', 'NZ'],
+    regionStyle: {
+      initial:       { fill: '#d1dbd4', stroke: '#ffffff', strokeWidth: 0.5 },
+      hover:         { fill: '#4a7c59', fillOpacity: 1, cursor: 'default' },
+      selected:      { fill: '#14532d' },
+      selectedHover: { fill: '#1b6b3a', cursor: 'default' }
+    },
+    markers: markers,
+    markerStyle: {
+      initial: { fill: '#b8860b', stroke: '#ffffff', strokeWidth: 2, r: 6 },
+      hover:   { fill: '#d4a737', r: 8, cursor: 'pointer' }
+    },
+    onMarkerTooltipShow: function (event, tooltip, index) {
+      tooltip.innerHTML = '<strong>' + markers[index].name + '</strong>';
+    },
+    onRegionTooltipShow: function (event, tooltip, code) {
+      if (memberLabels[code]) {
+        tooltip.innerHTML = '<strong>' + memberLabels[code] + '</strong> &nbsp;·&nbsp; Founding member country';
+      }
+    }
+  });
+}());
+</script>
+</body>
+</html>
