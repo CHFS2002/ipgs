@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>International Plant Grafting Society (IPGS)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & base ───────────────────────────────────── */
+  .ipgs-page *, .ipgs-page *::before, .ipgs-page *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .ipgs-page {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #1c2b22;
+    line-height: 1.6;
+    background: #fff;
+  }
+
+  /* ── Tokens ─────────────────────────────────────────── */
+  .ipgs-page {
+    --green:      #14532d;
+    --green-mid:  #1b6b3a;
+    --green-light:#d1fae5;
+    --green-bg:   #f0fdf4;
+    --gold:       #b8860b;
+    --gold-light: #fef9ee;
+    --stone:      #1c2b22;
+    --muted:      #5a7060;
+    --border:     #d4e8d8;
+    --radius:     12px;
+    --shadow:     0 2px 12px rgba(20,83,45,.10);
+  }
+
+  /* ── Layout ─────────────────────────────────────────── */
+  .ipgs-wrap   { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+  .ipgs-section { padding: 3.5rem 0; }
+  .ipgs-section-tinted { background: var(--green-bg); }
+  .ipgs-section-dark   { background: var(--green); color: #fff; }
+
+  /* ── Hero ───────────────────────────────────────────── */
+  .ipgs-hero {
+    background: var(--green);
+    color: #fff;
+    padding: 3.5rem 0 3rem;
+    text-align: center;
+  }
+  .ipgs-hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,.12);
+    color: #d1fae5;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    padding: .35rem .9rem;
+    border-radius: 999px;
+    margin-bottom: 1.25rem;
+  }
+  .ipgs-hero h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: .9rem;
+  }
+  .ipgs-hero-abbr {
+    color: #6ee7b7;
+  }
+  .ipgs-hero p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,.85);
+    max-width: 580px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+  .ipgs-btn {
+    display: inline-block;
+    font-family: inherit;
+    font-size: .95rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: .75rem 1.75rem;
+    border-radius: 8px;
+    transition: transform .15s, box-shadow .15s;
+    cursor: pointer;
+  }
+  .ipgs-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+  .ipgs-btn-white  { background: #fff; color: var(--green); }
+  .ipgs-btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); margin-left: .75rem; }
+  .ipgs-btn-outline:hover { border-color: #fff; }
+  .ipgs-btn-green  { background: var(--green); color: #fff; }
+
+  /* ── Metrics strip ──────────────────────────────────── */
+  .ipgs-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .ipgs-metric {
+    background: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  .ipgs-metric-val {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--green);
+    line-height: 1.1;
+  }
+  .ipgs-metric-lbl {
+    display: block;
+    font-size: .78rem;
+    color: var(--muted);
+    margin-top: .35rem;
+    line-height: 1.4;
+  }
+
+  /* ── Cards grid ─────────────────────────────────────── */
+  .ipgs-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .ipgs-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .ipgs-card-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    background: var(--green-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: .9rem;
+    color: var(--green);
+  }
+  .ipgs-card-icon svg { width: 1.1rem; height: 1.1rem; }
+  .ipgs-card h3 {
+    font-size: .98rem;
+    font-weight: 700;
+    color: var(--stone);
+    margin-bottom: .4rem;
+  }
+  .ipgs-card p {
+    font-size: .85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── Info table ─────────────────────────────────────── */
+  .ipgs-info {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+  }
+  .ipgs-info td {
+    padding: .7rem 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .ipgs-info td:first-child {
+    width: 38%;
+    font-weight: 600;
+    color: var(--muted);
+    font-size: .8rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    padding-right: 1rem;
+  }
+  .ipgs-info tr:last-child td { border-bottom: none; }
+
+  /* ── Section heading ────────────────────────────────── */
+  .ipgs-eyebrow {
+    display: block;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: .6rem;
+  }
+  .ipgs-h2 {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--stone);
+    margin-bottom: .75rem;
+    line-height: 1.25;
+  }
+  .ipgs-lead {
+    font-size: .95rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  /* ── Meeting banner ─────────────────────────────────── */
+  .ipgs-meeting {
+    background: var(--green);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 1.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .ipgs-meeting-date {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #6ee7b7;
+    line-height: 1.2;
+  }
+  .ipgs-meeting-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin: .2rem 0 .1rem;
+  }
+  .ipgs-meeting-sub {
+    font-size: .82rem;
+    color: rgba(255,255,255,.7);
+  }
+
+  /* ── CTA section ────────────────────────────────────── */
+  .ipgs-cta {
+    background: var(--green);
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+  }
+  .ipgs-cta h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: .75rem;
+  }
+  .ipgs-cta p {
+    color: rgba(255,255,255,.8);
+    margin-bottom: 1.75rem;
+    font-size: .95rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── Footer ─────────────────────────────────────────── */
+  .ipgs-footer {
+    background: #0d3b20;
+    color: rgba(255,255,255,.6);
+    text-align: center;
+    padding: 1.5rem 1.25rem;
+    font-size: .8rem;
+    line-height: 1.8;
+  }
+  .ipgs-footer a { color: #6ee7b7; text-decoration: none; }
+
+  /* ── Responsive ─────────────────────────────────────── */
+  @media (max-width: 620px) {
+    .ipgs-metrics { grid-template-columns: repeat(2, 1fr); }
+    .ipgs-cards   { grid-template-columns: 1fr; }
+    .ipgs-btn-outline { margin-left: 0; margin-top: .6rem; display: block; text-align: center; }
+    .ipgs-meeting { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="ipgs-page">
+
+  <!-- Hero -->
+  <div class="ipgs-hero">
+    <div class="ipgs-wrap">
+      <span class="ipgs-hero-badge">Founded 2026 · Anchored at HZAU</span>
+      <h1>International Plant<br>Grafting Society <span class="ipgs-hero-abbr">(IPGS)</span></h1>
+      <p>A global academic society uniting the world's leading researchers to advance the science of plant grafting — for food systems that feed a warmer planet.</p>
+      <a href="https://chfs-en.hzau.edu.cn/ipgs" target="_blank" rel="noopener" class="ipgs-btn ipgs-btn-white">Visit IPGS Website →</a>
+      <a href="https://chfs-en.hzau.edu.cn/ipgs/contact.html" target="_blank" rel="noopener" class="ipgs-btn ipgs-btn-outline">Join the Society</a>
+    </div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="ipgs-section">
+    <div class="ipgs-wrap">
+      <div class="ipgs-metrics">
+        <div class="ipgs-metric">
+          <span class="ipgs-metric-val">80%</span>
+          <span class="ipgs-metric-lbl">of global watermelon &amp; tomato production relies on grafted plants</span>
+        </div>
+        <div class="ipgs-metric">
+          <span class="ipgs-metric-val">40%</span>
+          <span class="ipgs-metric-lbl">reduction in soilborne-disease losses achievable through grafting</span>
+        </div>
+        <div class="ipgs-metric">
+          <span class="ipgs-metric-val">30%+</span>
+          <span class="ipgs-metric-lbl">yield improvement documented in grafted vegetable crops</span>
+        </div>
+        <div class="ipgs-metric">
+          <span class="ipgs-metric-val">60+</span>
+          <span class="ipgs-metric-lbl">countries where vegetable grafting is commercially practiced</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="ipgs-section ipgs-section-tinted">
+    <div class="ipgs-wrap">
+      <span class="ipgs-eyebrow">About IPGS</span>
+      <h2 class="ipgs-h2">What is the International Plant Grafting Society?</h2>
+      <p class="ipgs-lead">IPGS is a purely academic international society coordinating research, building shared infrastructure, training researchers, and setting global standards in plant grafting science. The Society is anchored at the College of Horticulture &amp; Forestry Sciences, Huazhong Agricultural University (HZAU), Wuhan, China.</p>
+
+      <div class="ipgs-cards">
+        <div class="ipgs-card">
+          <div class="ipgs-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Coordinate Research</h3>
+          <p>Seven thematic Working Groups deliver flagship programs and collaborative projects across member institutions worldwide.</p>
+        </div>
+        <div class="ipgs-card">
+          <div class="ipgs-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/></svg>
+          </div>
+          <h3>Build Infrastructure</h3>
+          <p>The IPGS Knowledge Commons hosts compatibility data, open protocols, germplasm registries, and FAIR-compliant datasets.</p>
+        </div>
+        <div class="ipgs-card">
+          <div class="ipgs-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h3>Train Researchers</h3>
+          <p>Joint PhD supervision, postdoctoral mobility, and the HZAU Summer Exchange Programs nurture the next generation.</p>
+        </div>
+        <div class="ipgs-card">
+          <div class="ipgs-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2h-4M9 11V5a3 3 0 116 0v6M9 11h6"/></svg>
+          </div>
+          <h3>Set Standards</h3>
+          <p>The Minimum Information for Grafting Experiments (MIGE) and harmonised protocols establish a shared scientific vocabulary.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key facts -->
+  <div class="ipgs-section">
+    <div class="ipgs-wrap">
+      <span class="ipgs-eyebrow">Key Facts</span>
+      <h2 class="ipgs-h2">Society at a glance</h2>
+      <table class="ipgs-info">
+        <tr>
+          <td>Founded</td>
+          <td>2026, at the Founding Meeting in Wuhan, China</td>
+        </tr>
+        <tr>
+          <td>Chair</td>
+          <td>Prof. Xu Qiang — Dean &amp; Professor, HZAU-CHFS</td>
+        </tr>
+        <tr>
+          <td>General Secretary</td>
+          <td>Prof. Lin Zongcheng — Professor, HZAU-CHFS</td>
+        </tr>
+        <tr>
+          <td>Secretariat</td>
+          <td>College of Horticulture &amp; Forestry Sciences, Huazhong Agricultural University, Wuhan 430070, China</td>
+        </tr>
+        <tr>
+          <td>Founding members</td>
+          <td>Brazil · China · France · Greece · Italy · New Zealand · Spain · Türkiye</td>
+        </tr>
+        <tr>
+          <td>Working Groups</td>
+          <td>7 thematic groups covering grafting biology, climate adaptation, soil health, yield &amp; quality, mechanisation &amp; AI, standardisation, and capacity building</td>
+        </tr>
+        <tr>
+          <td>Contact</td>
+          <td><a href="mailto:chfsfao@mail.hzau.edu.cn" style="color:#14532d">chfsfao@mail.hzau.edu.cn</a></td>
+        </tr>
+      </table>
+
+      <!-- Founding meeting banner -->
+      <div class="ipgs-meeting">
+        <div>
+          <div class="ipgs-meeting-date">7–10 May 2026</div>
+          <div class="ipgs-meeting-title">IPGS Founding Meeting &amp; Symposium</div>
+          <div class="ipgs-meeting-sub">Wuhan, Hubei, China · Huazhong Agricultural University</div>
+        </div>
+        <a href="https://chfs-en.hzau.edu.cn/ipgs/founding-meeting.html" target="_blank" rel="noopener" class="ipgs-btn ipgs-btn-white" style="white-space:nowrap">View program →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="ipgs-cta">
+    <div class="ipgs-wrap">
+      <h2>Explore the full IPGS website</h2>
+      <p>Research framework, Knowledge Commons, founding members, governance documents, and more.</p>
+      <a href="https://chfs-en.hzau.edu.cn/ipgs" target="_blank" rel="noopener" class="ipgs-btn ipgs-btn-white" style="font-size:1rem;padding:.85rem 2.25rem">Visit chfs-en.hzau.edu.cn/ipgs →</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="ipgs-footer">
+    <div>© 2026 International Plant Grafting Society · Secretariat hosted by HZAU-CHFS, Wuhan, China</div>
+    <div><a href="https://chfs-en.hzau.edu.cn/ipgs">chfs-en.hzau.edu.cn/ipgs</a></div>
+  </div>
+
+</div>
+</body>
+</html>
