@@ -1,0 +1,13 @@
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editor
+*.swp
+.vscode/
+.idea/
+
+# Python dev server
+__pycache__/
+*.py
