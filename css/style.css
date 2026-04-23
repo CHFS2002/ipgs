@@ -150,6 +150,11 @@ pre { padding: 1rem; overflow-x: auto; }
   list-style: none; padding: 0; margin: 0;
   display: flex; gap: 1.7rem; align-items: center;
 }
+.main-nav li {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
 .main-nav a {
   color: var(--ipgs-stone);
   font-weight: 500;
