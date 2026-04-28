@@ -557,7 +557,9 @@
       tooltip.innerHTML = '<strong>' + markers[index].name + '</strong>';
     },
     onRegionTooltipShow: function (event, tooltip, code) {
-      if (memberLabels[code]) {
+      if (code === 'TW') {
+        tooltip.innerHTML = '<strong>Taiwan Province of China</strong>';
+      } else if (memberLabels[code]) {
         tooltip.innerHTML = '<strong>' + memberLabels[code] + '</strong> &nbsp;·&nbsp; Founding member country';
       }
     }
