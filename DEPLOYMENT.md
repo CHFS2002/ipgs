@@ -19,7 +19,7 @@ ipgs-website/
 ├── research.html            3-tier research model + 7 Working Groups
 ├── knowledge.html           Knowledge Commons (MIGE, FAIR policy)
 ├── events.html              Events programmes and calls
-├── founding-meeting.html    Wuhan, 7–10 May 2026 landing page
+├── founding-meeting.html    Wuhan, 7–9 May 2026 landing page
 ├── news.html                Announcements and newsletter
 ├── contact.html             Secretariat, regional desks, contact form
 ├── privacy.html             Privacy policy (draft)
