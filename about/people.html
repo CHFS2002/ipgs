@@ -541,7 +541,7 @@
     zoomOnScroll: false,
     regionsSelectable: false,
     markersSelectable: false,
-    selectedRegions: ['CN', 'BR', 'IT', 'ES', 'GR', 'TR', 'FR', 'NZ'],
+    selectedRegions: ['CN', 'TW', 'BR', 'IT', 'ES', 'GR', 'TR', 'FR', 'NZ'],
     regionStyle: {
       initial:       { fill: '#d1dbd4', stroke: '#ffffff', strokeWidth: 0.5 },
       hover:         { fill: '#4a7c59', fillOpacity: 1, cursor: 'default' },
@@ -559,8 +559,13 @@
     onRegionTooltipShow: function (event, tooltip, code) {
       if (code === 'TW') {
         tooltip.innerHTML = '<strong>Taiwan Province of China</strong>';
-      } else if (memberLabels[code]) {
+        return;
+      }
+      if (memberLabels[code]) {
         tooltip.innerHTML = '<strong>' + memberLabels[code] + '</strong> &nbsp;·&nbsp; Founding member country';
+      } else {
+        /* suppress default tooltip for all other non-member regions */
+        event.preventDefault();
       }
     }
   });
