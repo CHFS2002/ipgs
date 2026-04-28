@@ -96,7 +96,7 @@
     <div class="container">
       <nav class="breadcrumb"><a href="../index.html">Home</a> / <a href="../about.html">About</a> / People &amp; Institutions</nav>
       <h1>People &amp; Institutions</h1>
-      <p class="lead">The researchers, institutions, and leadership structure of IPGS — spanning 8 countries across 4 continents at founding.</p>
+      <p class="lead">The researchers, institutions, and leadership structure of IPGS — spanning 10 countries across 4 continents at founding.</p>
     </div>
   </section>
 
@@ -105,7 +105,7 @@
     <div class="container">
       <span class="eyebrow">Global canvas</span>
       <h2>Where our members are</h2>
-      <p style="max-width:68ch">Founding members represent institutions across Asia, Europe, South America, and Oceania. Highlighted countries have at least one founding member institution; gold markers show individual institutions.</p>
+      <p style="max-width:68ch">Founding members represent institutions across Asia, Europe, South America, and Oceania — 10 countries in total. Highlighted countries have at least one founding member institution; gold markers show individual institutions.</p>
 
       <div id="ipgs-world-map" role="img" aria-label="World map showing IPGS founding member countries highlighted in green with gold institution markers"></div>
 
@@ -121,9 +121,9 @@
       </div>
 
       <div class="grid grid-4" style="margin-top:2.5rem">
-        <div class="metric"><span class="value">8</span><span class="label">founding member countries</span></div>
+        <div class="metric"><span class="value">10</span><span class="label">founding member countries</span></div>
         <div class="metric"><span class="value">4</span><span class="label">continents represented</span></div>
-        <div class="metric"><span class="value">17</span><span class="label">founding members</span></div>
+        <div class="metric"><span class="value">19</span><span class="label">founding members</span></div>
         <div class="metric"><span class="value">7</span><span class="label">thematic working groups</span></div>
       </div>
     </div>
@@ -363,6 +363,14 @@
           <div><div class="profile-name">Dr. Jean Carlos Bettoni</div><p class="profile-affil">Lincoln University, New Zealand</p><span class="profile-country">🇳🇿 New Zealand</span></div>
         </div>
         <div class="profile">
+          <img src="../assets/speakers/image10.jpg" alt="Prof. Charles Melnyk" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+          <div><div class="profile-name">Prof. Charles Melnyk</div><p class="profile-affil">Swedish University of Agricultural Sciences (SLU)</p><span class="profile-country">🇸🇪 Sweden</span></div>
+        </div>
+        <div class="profile">
+          <img src="../assets/speakers/image9.jpg" alt="Prof. Michitaka Notaguchi" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
+          <div><div class="profile-name">Prof. Michitaka Notaguchi</div><p class="profile-affil">Kyoto University</p><span class="profile-country">🇯🇵 Japan</span></div>
+        </div>
+        <div class="profile">
           <div class="profile-avatar">GQ</div>
           <div><div class="profile-name">Prof. Guan Qingmei <span style="font-weight:400;color:var(--ipgs-stone-400);font-size:.85rem">(管清美)</span></div><p class="profile-affil">Northwest A&amp;F University, Yangling</p><span class="profile-country">🇨🇳 China</span></div>
         </div>
@@ -406,7 +414,7 @@
       <h2>Founding Institutions</h2>
       <p style="max-width:68ch">One institutional card per founding member institution, organized by continent. Institutions marked TBC have a confirmed invitation pending formal designation.</p>
 
-      <h3 class="region-heading">Asia — China</h3>
+      <h3 class="region-heading">Asia — China &amp; Japan</h3>
       <div class="grid grid-3">
         <div class="card inst-card">
           <div class="inst-flag">🇨🇳</div>
@@ -444,6 +452,10 @@
           <div class="inst-flag">🇨🇳</div>
           <div><strong>Beijing Academy of Agriculture &amp; Forestry Sciences</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Beijing</p><span class="chip" style="background:#f0fdf4;color:#14532d">Invited · TBC</span></div>
         </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇯🇵</div>
+          <div><strong>Kyoto University</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Kyoto, Japan</p><span class="chip chip-gold">Founding</span></div>
+        </div>
       </div>
 
       <h3 class="region-heading">Europe</h3>
@@ -471,6 +483,10 @@
         <div class="card inst-card">
           <div class="inst-flag">🇫🇷</div>
           <div><strong>INRAE</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">France · Online participation</p><span class="chip chip-gold">Founding</span></div>
+        </div>
+        <div class="card inst-card">
+          <div class="inst-flag">🇸🇪</div>
+          <div><strong>Swedish University of Agricultural Sciences (SLU)</strong><p class="muted" style="margin:.3rem 0 .5rem;font-size:.82rem">Uppsala, Sweden</p><span class="chip chip-gold">Founding</span></div>
         </div>
       </div>
 
@@ -544,12 +560,15 @@
     { name: 'Nanjing Agricultural University · Nanjing',    coords: [32.07,  118.87] },
     { name: 'Qingdao Agricultural University · Qingdao',    coords: [36.40,  120.20] },
     { name: 'Zhengzhou Fruit Research Institute, CAAS · Zhengzhou', coords: [34.75, 113.69] },
-    { name: 'Beijing Academy of Agriculture & Forestry Sciences', coords: [40.02, 116.25] }
+    { name: 'Beijing Academy of Agriculture & Forestry Sciences', coords: [40.02, 116.25] },
+    { name: 'Kyoto University · Kyoto, Japan',               coords: [35.03,  135.78] },
+    { name: 'SLU · Uppsala, Sweden',                         coords: [59.82,   17.65] }
   ];
 
   var memberLabels = {
     CN: 'China', BR: 'Brazil', IT: 'Italy', ES: 'Spain',
-    GR: 'Greece', TR: 'Türkiye', FR: 'France', NZ: 'New Zealand'
+    GR: 'Greece', TR: 'Türkiye', FR: 'France', NZ: 'New Zealand',
+    JP: 'Japan', SE: 'Sweden'
   };
 
   new jsVectorMap({
@@ -559,7 +578,7 @@
     zoomOnScroll: false,
     regionsSelectable: false,
     markersSelectable: false,
-    selectedRegions: ['CN', 'TW', 'BR', 'IT', 'ES', 'GR', 'TR', 'FR', 'NZ'],
+    selectedRegions: ['CN', 'TW', 'BR', 'IT', 'ES', 'GR', 'TR', 'FR', 'NZ', 'JP', 'SE'],
     regionStyle: {
       initial:       { fill: '#d1dbd4', stroke: '#ffffff', strokeWidth: 0.5 },
       hover:         { fill: '#4a7c59', fillOpacity: 1, cursor: 'default' },
