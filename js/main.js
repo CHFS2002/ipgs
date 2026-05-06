@@ -112,4 +112,15 @@
       }
     });
   });
+
+  // --- Twemoji: render emoji flags consistently on Windows ---
+  // Windows lacks system flag emoji support; Twemoji replaces all emoji
+  // with platform-neutral SVG images served from jsDelivr CDN.
+  var tw = document.createElement('script');
+  tw.src = 'https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js';
+  tw.crossOrigin = 'anonymous';
+  tw.onload = function () {
+    twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+  };
+  document.head.appendChild(tw);
 })();

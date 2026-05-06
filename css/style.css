@@ -499,6 +499,15 @@ details > *:not(summary) { margin-top: 0.9rem; }
 }
 .skip-link:focus { top: 0; }
 
+/* Twemoji images — keep inline, match text size */
+img.emoji {
+  height: 1.1em;
+  width: 1.1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.15em;
+  display: inline-block;
+}
+
 /* Print */
 @media print {
   .site-header, .site-footer, .announcement-banner, .nav-toggle, .hero-ctas { display: none; }
