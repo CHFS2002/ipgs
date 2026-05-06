@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IPGS Logo Variants — Design Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+    background: #e8ede8;
+    padding: 2.5rem 2rem 4rem;
+    color: #1a2e1a;
+  }
+  .page-title {
+    text-align: center; color: #14532d; font-size: 1.7rem;
+    font-weight: 800; margin-bottom: .3rem; letter-spacing: -.02em;
+  }
+  .page-sub {
+    text-align: center; color: #6b9e7b; font-size: .85rem;
+    margin-bottom: 2.5rem; letter-spacing: .03em;
+  }
+  .grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1.75rem; max-width: 1020px; margin: 0 auto;
+  }
+  .card {
+    background: #fff; border-radius: 18px;
+    padding: 1.85rem; box-shadow: 0 4px 24px rgba(20,83,45,.1);
+  }
+  .card-title {
+    font-size: 1rem; font-weight: 700; color: #14532d; margin-bottom: .2rem;
+  }
+  .card-desc {
+    font-size: .77rem; color: #94a3b8; line-height: 1.5; margin-bottom: 1.5rem;
+  }
+  .preview-row {
+    display: flex; align-items: flex-end; justify-content: center;
+    gap: 1.5rem; padding-bottom: 1.35rem;
+    border-bottom: 1px solid #f0f4f0; margin-bottom: 1.25rem; flex-wrap: wrap;
+  }
+  .sz { text-align: center; }
+  .sz figcaption {
+    font-size: .6rem; color: #b0bec5; margin-top: 6px;
+    display: block; text-transform: uppercase; letter-spacing: .05em;
+  }
+  .on-dark {
+    background: #14532d; border-radius: 9px;
+    padding: 7px; display: inline-block; line-height: 0;
+  }
+  .wordmark {
+    display: flex; align-items: center; gap: .75rem;
+    background: #f5f8f5; border-radius: 11px; padding: .9rem 1.15rem;
+  }
+  .wm-text strong {
+    display: block; font-size: 1rem; font-weight: 800;
+    color: #14532d; letter-spacing: .06em;
+  }
+  .wm-text span {
+    font-size: .62rem; font-weight: 500; color: #6b9e7b;
+    text-transform: uppercase; letter-spacing: .06em;
+  }
+  .note {
+    font-size: .72rem; color: #aab8aa; margin-top: .9rem;
+    font-style: italic; line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<p class="page-title">IPGS — Logo Design Variants</p>
+<p class="page-sub">International Plant Grafting Society · 4 concepts for review</p>
+
+<div class="grid">
+
+  <!-- ══════════════ VARIANT 1 — THE GRAFT FORK ══════════════ -->
+  <div class="card">
+    <div class="card-title">Variant 1 — "The Graft Fork"</div>
+    <div class="card-desc">Botanical Y-fork with a gold graft-tape band across the junction. The most science-specific mark — directly illustrates the rootstock–scion union. Reads cleanly at all sizes.</div>
+
+    <div class="preview-row">
+      <!-- Large -->
+      <div class="sz">
+        <svg width="130" height="130" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- rootstock -->
+          <line x1="50" y1="57" x2="50" y2="94" stroke="#14532d" stroke-width="10" stroke-linecap="round"/>
+          <!-- left scion -->
+          <path d="M50,57 Q33,43 20,16" stroke="#14532d" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <!-- right scion -->
+          <path d="M50,57 Q67,43 80,16" stroke="#14532d" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <!-- graft band -->
+          <rect x="29" y="51.5" width="42" height="10" rx="5" fill="#c9972a"/>
+          <!-- band highlight -->
+          <rect x="29" y="51.5" width="42" height="4.5" rx="5" fill="#daa83b" opacity=".5"/>
+          <!-- left leaf -->
+          <path d="M0,0 C-9,-5 -9,-16 0,-22 C9,-16 9,-5 0,0Z" fill="#14532d" transform="translate(20,16) rotate(-33)"/>
+          <!-- left vein -->
+          <line x1="0" y1="-1" x2="0" y2="-20" stroke="#dcfce7" stroke-width="1" opacity=".5" transform="translate(20,16) rotate(-33)"/>
+          <!-- right leaf -->
+          <path d="M0,0 C-9,-5 -9,-16 0,-22 C9,-16 9,-5 0,0Z" fill="#14532d" transform="translate(80,16) rotate(33)"/>
+          <!-- right vein -->
+          <line x1="0" y1="-1" x2="0" y2="-20" stroke="#dcfce7" stroke-width="1" opacity=".5" transform="translate(80,16) rotate(33)"/>
+        </svg>
+        <figcaption>Display</figcaption>
+      </div>
+      <!-- 64px -->
+      <div class="sz">
+        <svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <line x1="50" y1="57" x2="50" y2="94" stroke="#14532d" stroke-width="10" stroke-linecap="round"/>
+          <path d="M50,57 Q33,43 20,16" stroke="#14532d" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <path d="M50,57 Q67,43 80,16" stroke="#14532d" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <rect x="29" y="51.5" width="42" height="10" rx="5" fill="#c9972a"/>
+          <path d="M0,0 C-9,-5 -9,-16 0,-22 C9,-16 9,-5 0,0Z" fill="#14532d" transform="translate(20,16) rotate(-33)"/>
+          <path d="M0,0 C-9,-5 -9,-16 0,-22 C9,-16 9,-5 0,0Z" fill="#14532d" transform="translate(80,16) rotate(33)"/>
+        </svg>
+        <figcaption>64 px</figcaption>
+      </div>
+      <!-- 44px on dark -->
+      <div class="sz">
+        <div class="on-dark">
+          <svg width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <line x1="50" y1="57" x2="50" y2="94" stroke="#dcfce7" stroke-width="11" stroke-linecap="round"/>
+            <path d="M50,57 Q33,43 20,16" stroke="#dcfce7" stroke-width="9" stroke-linecap="round" fill="none"/>
+            <path d="M50,57 Q67,43 80,16" stroke="#dcfce7" stroke-width="9" stroke-linecap="round" fill="none"/>
+            <rect x="29" y="51.5" width="42" height="10" rx="5" fill="#c9972a"/>
+            <path d="M0,0 C-9,-5 -9,-16 0,-22 C9,-16 9,-5 0,0Z" fill="#dcfce7" transform="translate(20,16) rotate(-33)"/>
+            <path d="M0,0 C-9,-5 -9,-16 0,-22 C9,-16 9,-5 0,0Z" fill="#dcfce7" transform="translate(80,16) rotate(33)"/>
+          </svg>
+        </div>
+        <figcaption>44 px · dark bg</figcaption>
+      </div>
+    </div>
+
+    <!-- Wordmark row -->
+    <div class="wordmark">
+      <svg width="38" height="38" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <line x1="50" y1="57" x2="50" y2="94" stroke="#14532d" stroke-width="10" stroke-linecap="round"/>
+        <path d="M50,57 Q33,43 20,16" stroke="#14532d" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M50,57 Q67,43 80,16" stroke="#14532d" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <rect x="29" y="51.5" width="42" height="10" rx="5" fill="#c9972a"/>
+        <path d="M0,0 C-9,-5 -9,-16 0,-22 C9,-16 9,-5 0,0Z" fill="#14532d" transform="translate(20,16) rotate(-33)"/>
+        <path d="M0,0 C-9,-5 -9,-16 0,-22 C9,-16 9,-5 0,0Z" fill="#14532d" transform="translate(80,16) rotate(33)"/>
+      </svg>
+      <div class="wm-text">
+        <strong>IPGS</strong>
+        <span>International Plant Grafting Society</span>
+      </div>
+    </div>
+    <p class="note">✦ Most legible at 44 px. Gold band is the visual anchor. Suitable as website favicon, app icon, and standalone mark.</p>
+  </div>
+
+
+  <!-- ══════════════ VARIANT 2 — SOCIETY SEAL ══════════════ -->
+  <div class="card">
+    <div class="card-title">Variant 2 — "Society Seal"</div>
+    <div class="card-desc">Traditional circular academic emblem with full society name on the perimeter ring. Authoritative and institutional — suited for formal documents, certificates, letterheads, and stamps.</div>
+
+    <div class="preview-row">
+      <!-- Large -->
+      <div class="sz">
+        <svg width="130" height="130" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="tArc2" d="M10.5,50 A39.5,39.5 0 1,1 89.5,50"/>
+            <path id="bArc2" d="M14,57 A38,38 0 0,0 86,57"/>
+          </defs>
+          <!-- disc -->
+          <circle cx="50" cy="50" r="48" fill="#14532d"/>
+          <!-- inner ring guide -->
+          <circle cx="50" cy="50" r="40.5" fill="none" stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
+          <!-- perimeter text -->
+          <text font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif" font-size="7.1" font-weight="600" fill="white" letter-spacing="2.3">
+            <textPath href="#tArc2" startOffset="5%">INTERNATIONAL PLANT GRAFTING SOCIETY</textPath>
+          </text>
+          <text font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif" font-size="6.6" fill="rgba(255,255,255,.55)" letter-spacing="4.5">
+            <textPath href="#bArc2" startOffset="22%">· 2026 ·</textPath>
+          </text>
+          <!-- inner graft icon -->
+          <line x1="50" y1="69" x2="50" y2="81" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M50,69 Q40,60 31,47" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M50,69 Q60,60 69,47" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <!-- graft band -->
+          <rect x="38.5" y="64.5" width="23" height="6.5" rx="3.25" fill="#c9972a"/>
+          <!-- leaves -->
+          <path d="M0,0 C-5.5,-3 -5.5,-10 0,-14 C5.5,-10 5.5,-3 0,0Z" fill="white" transform="translate(31,47) rotate(-28)"/>
+          <path d="M0,0 C-5.5,-3 -5.5,-10 0,-14 C5.5,-10 5.5,-3 0,0Z" fill="white" transform="translate(69,47) rotate(28)"/>
+          <!-- IPGS text -->
+          <text x="50" y="42" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif" font-size="13" font-weight="800" fill="white" text-anchor="middle" letter-spacing="1.5">IPGS</text>
+        </svg>
+        <figcaption>Display</figcaption>
+      </div>
+      <!-- 64px -->
+      <div class="sz">
+        <svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="#14532d"/>
+          <circle cx="50" cy="50" r="40.5" fill="none" stroke="rgba(255,255,255,.22)" stroke-width=".7"/>
+          <line x1="50" y1="69" x2="50" y2="81" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M50,69 Q40,60 31,47" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M50,69 Q60,60 69,47" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <rect x="38.5" y="64.5" width="23" height="6.5" rx="3.25" fill="#c9972a"/>
+          <path d="M0,0 C-5.5,-3 -5.5,-10 0,-14 C5.5,-10 5.5,-3 0,0Z" fill="white" transform="translate(31,47) rotate(-28)"/>
+          <path d="M0,0 C-5.5,-3 -5.5,-10 0,-14 C5.5,-10 5.5,-3 0,0Z" fill="white" transform="translate(69,47) rotate(28)"/>
+          <text x="50" y="42" font-family="-apple-system,sans-serif" font-size="13" font-weight="800" fill="white" text-anchor="middle" letter-spacing="1.5">IPGS</text>
+        </svg>
+        <figcaption>64 px</figcaption>
+      </div>
+      <!-- 44px on dark -->
+      <div class="sz">
+        <div class="on-dark">
+          <svg width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="47" fill="rgba(255,255,255,.12)" stroke="white" stroke-width="2"/>
+            <line x1="50" y1="69" x2="50" y2="81" stroke="white" stroke-width="5" stroke-linecap="round"/>
+            <path d="M50,69 Q40,60 31,47" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <path d="M50,69 Q60,60 69,47" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <rect x="38.5" y="64.5" width="23" height="6.5" rx="3.25" fill="#c9972a"/>
+            <path d="M0,0 C-5.5,-3 -5.5,-10 0,-14 C5.5,-10 5.5,-3 0,0Z" fill="white" transform="translate(31,47) rotate(-28)"/>
+            <path d="M0,0 C-5.5,-3 -5.5,-10 0,-14 C5.5,-10 5.5,-3 0,0Z" fill="white" transform="translate(69,47) rotate(28)"/>
+            <text x="50" y="42" font-family="-apple-system,sans-serif" font-size="13" font-weight="800" fill="white" text-anchor="middle">IPGS</text>
+          </svg>
+        </div>
+        <figcaption>44 px · dark bg</figcaption>
+      </div>
+    </div>
+
+    <div class="wordmark">
+      <svg width="38" height="38" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#14532d"/>
+        <line x1="50" y1="69" x2="50" y2="81" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M50,69 Q40,60 31,47" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M50,69 Q60,60 69,47" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <rect x="38.5" y="64.5" width="23" height="6.5" rx="3.25" fill="#c9972a"/>
+        <path d="M0,0 C-5.5,-3 -5.5,-10 0,-14 C5.5,-10 5.5,-3 0,0Z" fill="white" transform="translate(31,47) rotate(-28)"/>
+        <path d="M0,0 C-5.5,-3 -5.5,-10 0,-14 C5.5,-10 5.5,-3 0,0Z" fill="white" transform="translate(69,47) rotate(28)"/>
+        <text x="50" y="42" font-family="-apple-system,sans-serif" font-size="13" font-weight="800" fill="white" text-anchor="middle">IPGS</text>
+      </svg>
+      <div class="wm-text">
+        <strong>IPGS</strong>
+        <span>International Plant Grafting Society</span>
+      </div>
+    </div>
+    <p class="note">✦ Traditional seal format used by ISHS, ASHS, and other horticultural societies. Text ring may blur below 64 px — use simplified circle variant as favicon.</p>
+  </div>
+
+
+  <!-- ══════════════ VARIANT 3 — DUAL LEAF UNION ══════════════ -->
+  <div class="card">
+    <div class="card-title">Variant 3 — "Dual Leaf Union"</div>
+    <div class="card-desc">Two opposing leaves with stems converging at a gold graft junction point. Represents the rootstock–scion meeting. Abstract yet botanical — modern, versatile, gender-neutral scientific aesthetic.</div>
+
+    <div class="preview-row">
+      <!-- Large -->
+      <div class="sz">
+        <svg width="150" height="105" viewBox="0 0 140 90" xmlns="http://www.w3.org/2000/svg">
+          <!-- rootstock leaf (left, darker) -->
+          <path d="M70,45 C66,26 40,23 10,45 C40,67 66,64 70,45Z" fill="#14532d"/>
+          <!-- vein left -->
+          <line x1="70" y1="45" x2="12" y2="45" stroke="rgba(220,252,231,.4)" stroke-width="1.1"/>
+          <!-- scion leaf (right, slightly lighter green) -->
+          <path d="M70,45 C74,26 100,23 130,45 C100,67 74,64 70,45Z" fill="#1a6b3a"/>
+          <!-- vein right -->
+          <line x1="70" y1="45" x2="128" y2="45" stroke="rgba(220,252,231,.4)" stroke-width="1.1"/>
+          <!-- graft junction gold dot -->
+          <circle cx="70" cy="45" r="7" fill="#c9972a"/>
+          <circle cx="70" cy="45" r="4" fill="#daa83b"/>
+          <circle cx="70" cy="45" r="1.8" fill="#c9972a"/>
+          <!-- small leaf veins -->
+          <path d="M40,38 L27,45 L40,52" stroke="rgba(220,252,231,.2)" stroke-width=".8" fill="none"/>
+          <path d="M100,38 L113,45 L100,52" stroke="rgba(220,252,231,.2)" stroke-width=".8" fill="none"/>
+        </svg>
+        <figcaption>Display</figcaption>
+      </div>
+      <!-- Square icon crop -->
+      <div class="sz">
+        <svg width="64" height="64" viewBox="20 10 100 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M70,45 C66,26 40,23 10,45 C40,67 66,64 70,45Z" fill="#14532d"/>
+          <line x1="70" y1="45" x2="12" y2="45" stroke="rgba(220,252,231,.4)" stroke-width="1.1"/>
+          <path d="M70,45 C74,26 100,23 130,45 C100,67 74,64 70,45Z" fill="#1a6b3a"/>
+          <line x1="70" y1="45" x2="128" y2="45" stroke="rgba(220,252,231,.4)" stroke-width="1.1"/>
+          <circle cx="70" cy="45" r="7" fill="#c9972a"/>
+          <circle cx="70" cy="45" r="4" fill="#daa83b"/>
+          <circle cx="70" cy="45" r="1.8" fill="#c9972a"/>
+        </svg>
+        <figcaption>64 px</figcaption>
+      </div>
+      <!-- 44px on dark -->
+      <div class="sz">
+        <div class="on-dark">
+          <svg width="44" height="44" viewBox="20 10 100 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M70,45 C66,26 40,23 10,45 C40,67 66,64 70,45Z" fill="rgba(220,252,231,.75)"/>
+            <path d="M70,45 C74,26 100,23 130,45 C100,67 74,64 70,45Z" fill="rgba(220,252,231,.55)"/>
+            <circle cx="70" cy="45" r="7" fill="#c9972a"/>
+            <circle cx="70" cy="45" r="3.5" fill="#daa83b"/>
+          </svg>
+        </div>
+        <figcaption>44 px · dark bg</figcaption>
+      </div>
+    </div>
+
+    <div class="wordmark">
+      <svg width="52" height="36" viewBox="10 12 120 66" xmlns="http://www.w3.org/2000/svg">
+        <path d="M70,45 C66,26 40,23 10,45 C40,67 66,64 70,45Z" fill="#14532d"/>
+        <path d="M70,45 C74,26 100,23 130,45 C100,67 74,64 70,45Z" fill="#1a6b3a"/>
+        <circle cx="70" cy="45" r="7" fill="#c9972a"/>
+        <circle cx="70" cy="45" r="3.5" fill="#daa83b"/>
+      </svg>
+      <div class="wm-text">
+        <strong>IPGS</strong>
+        <span>International Plant Grafting Society</span>
+      </div>
+    </div>
+    <p class="note">✦ Wide aspect ratio suits horizontal header bars. The two-tone green leaves (darker = rootstock, lighter = scion) carry symbolic meaning. Gold node is the icon-scale anchor.</p>
+  </div>
+
+
+  <!-- ══════════════ VARIANT 4 — GLOBE GRAFT ══════════════ -->
+  <div class="card">
+    <div class="card-title">Variant 4 — "Globe Graft"</div>
+    <div class="card-desc">An Earth globe with a graft-fork plant silhouette on the face. Immediately signals international scope. Combines scientific and geographic symbolism — distinctive and memorable.</div>
+
+    <div class="preview-row">
+      <!-- Large -->
+      <div class="sz">
+        <svg width="130" height="130" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="gc4"><circle cx="50" cy="50" r="46"/></clipPath>
+          </defs>
+          <!-- globe disc -->
+          <circle cx="50" cy="50" r="46" fill="#0d4220"/>
+          <!-- longitude ellipses (clipped) -->
+          <ellipse cx="50" cy="50" rx="30" ry="46" fill="none" stroke="#1d7040" stroke-width="1.1" clip-path="url(#gc4)"/>
+          <ellipse cx="50" cy="50" rx="13" ry="46" fill="none" stroke="#1d7040" stroke-width="1.1" clip-path="url(#gc4)"/>
+          <!-- latitude lines (clipped) -->
+          <line x1="4" y1="50" x2="96" y2="50" stroke="#1d7040" stroke-width="1.1" clip-path="url(#gc4)"/>
+          <path d="M5,33 Q50,27 95,33" stroke="#1d7040" stroke-width="1" fill="none" clip-path="url(#gc4)"/>
+          <path d="M5,67 Q50,73 95,67" stroke="#1d7040" stroke-width="1" fill="none" clip-path="url(#gc4)"/>
+          <!-- globe border -->
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#1d7040" stroke-width="1.5"/>
+          <!-- graft fork — white, prominent -->
+          <line x1="50" y1="66" x2="50" y2="83" stroke="white" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50,66 Q38,56 27,41" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+          <path d="M50,66 Q62,56 73,41" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+          <!-- graft band on globe -->
+          <rect x="36" y="61" width="28" height="8" rx="4" fill="#c9972a"/>
+          <rect x="36" y="61" width="28" height="3.5" rx="4" fill="#daa83b" opacity=".55"/>
+          <!-- leaves -->
+          <path d="M0,0 C-7,-4 -7,-13 0,-18 C7,-13 7,-4 0,0Z" fill="white" transform="translate(27,41) rotate(-30)"/>
+          <path d="M0,0 C-7,-4 -7,-13 0,-18 C7,-13 7,-4 0,0Z" fill="white" transform="translate(73,41) rotate(30)"/>
+          <!-- subtle leaf veins -->
+          <line x1="0" y1="-1" x2="0" y2="-16" stroke="rgba(13,66,32,.4)" stroke-width=".8" transform="translate(27,41) rotate(-30)"/>
+          <line x1="0" y1="-1" x2="0" y2="-16" stroke="rgba(13,66,32,.4)" stroke-width=".8" transform="translate(73,41) rotate(30)"/>
+        </svg>
+        <figcaption>Display</figcaption>
+      </div>
+      <!-- 64px -->
+      <div class="sz">
+        <svg width="64" height="64" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs><clipPath id="gc4b"><circle cx="50" cy="50" r="46"/></clipPath></defs>
+          <circle cx="50" cy="50" r="46" fill="#0d4220"/>
+          <ellipse cx="50" cy="50" rx="30" ry="46" fill="none" stroke="#1d7040" stroke-width="1.1" clip-path="url(#gc4b)"/>
+          <ellipse cx="50" cy="50" rx="13" ry="46" fill="none" stroke="#1d7040" stroke-width="1.1" clip-path="url(#gc4b)"/>
+          <line x1="4" y1="50" x2="96" y2="50" stroke="#1d7040" stroke-width="1.1" clip-path="url(#gc4b)"/>
+          <path d="M5,33 Q50,27 95,33" stroke="#1d7040" stroke-width="1" fill="none" clip-path="url(#gc4b)"/>
+          <path d="M5,67 Q50,73 95,67" stroke="#1d7040" stroke-width="1" fill="none" clip-path="url(#gc4b)"/>
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#1d7040" stroke-width="1.5"/>
+          <line x1="50" y1="66" x2="50" y2="83" stroke="white" stroke-width="7" stroke-linecap="round"/>
+          <path d="M50,66 Q38,56 27,41" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+          <path d="M50,66 Q62,56 73,41" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+          <rect x="36" y="61" width="28" height="8" rx="4" fill="#c9972a"/>
+          <path d="M0,0 C-7,-4 -7,-13 0,-18 C7,-13 7,-4 0,0Z" fill="white" transform="translate(27,41) rotate(-30)"/>
+          <path d="M0,0 C-7,-4 -7,-13 0,-18 C7,-13 7,-4 0,0Z" fill="white" transform="translate(73,41) rotate(30)"/>
+        </svg>
+        <figcaption>64 px</figcaption>
+      </div>
+      <!-- 44px on dark -->
+      <div class="sz">
+        <div class="on-dark">
+          <svg width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs><clipPath id="gc4c"><circle cx="50" cy="50" r="46"/></clipPath></defs>
+            <circle cx="50" cy="50" r="46" fill="rgba(255,255,255,.1)"/>
+            <ellipse cx="50" cy="50" rx="30" ry="46" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.1" clip-path="url(#gc4c)"/>
+            <ellipse cx="50" cy="50" rx="13" ry="46" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1.1" clip-path="url(#gc4c)"/>
+            <line x1="4" y1="50" x2="96" y2="50" stroke="rgba(255,255,255,.2)" stroke-width="1.1" clip-path="url(#gc4c)"/>
+            <path d="M5,33 Q50,27 95,33" stroke="rgba(255,255,255,.15)" stroke-width="1" fill="none" clip-path="url(#gc4c)"/>
+            <path d="M5,67 Q50,73 95,67" stroke="rgba(255,255,255,.15)" stroke-width="1" fill="none" clip-path="url(#gc4c)"/>
+            <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+            <line x1="50" y1="66" x2="50" y2="83" stroke="white" stroke-width="7" stroke-linecap="round"/>
+            <path d="M50,66 Q38,56 27,41" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+            <path d="M50,66 Q62,56 73,41" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+            <rect x="36" y="61" width="28" height="8" rx="4" fill="#c9972a"/>
+            <path d="M0,0 C-7,-4 -7,-13 0,-18 C7,-13 7,-4 0,0Z" fill="white" transform="translate(27,41) rotate(-30)"/>
+            <path d="M0,0 C-7,-4 -7,-13 0,-18 C7,-13 7,-4 0,0Z" fill="white" transform="translate(73,41) rotate(30)"/>
+          </svg>
+        </div>
+        <figcaption>44 px · dark bg</figcaption>
+      </div>
+    </div>
+
+    <div class="wordmark">
+      <svg width="38" height="38" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs><clipPath id="gc4d"><circle cx="50" cy="50" r="46"/></clipPath></defs>
+        <circle cx="50" cy="50" r="46" fill="#0d4220"/>
+        <ellipse cx="50" cy="50" rx="30" ry="46" fill="none" stroke="#1d7040" stroke-width="1.1" clip-path="url(#gc4d)"/>
+        <ellipse cx="50" cy="50" rx="13" ry="46" fill="none" stroke="#1d7040" stroke-width="1.1" clip-path="url(#gc4d)"/>
+        <line x1="4" y1="50" x2="96" y2="50" stroke="#1d7040" stroke-width="1.1" clip-path="url(#gc4d)"/>
+        <path d="M5,33 Q50,27 95,33" stroke="#1d7040" stroke-width="1" fill="none" clip-path="url(#gc4d)"/>
+        <path d="M5,67 Q50,73 95,67" stroke="#1d7040" stroke-width="1" fill="none" clip-path="url(#gc4d)"/>
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#1d7040" stroke-width="1.5"/>
+        <line x1="50" y1="66" x2="50" y2="83" stroke="white" stroke-width="7" stroke-linecap="round"/>
+        <path d="M50,66 Q38,56 27,41" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+        <path d="M50,66 Q62,56 73,41" stroke="white" stroke-width="5.5" stroke-linecap="round" fill="none"/>
+        <rect x="36" y="61" width="28" height="8" rx="4" fill="#c9972a"/>
+        <path d="M0,0 C-7,-4 -7,-13 0,-18 C7,-13 7,-4 0,0Z" fill="white" transform="translate(27,41) rotate(-30)"/>
+        <path d="M0,0 C-7,-4 -7,-13 0,-18 C7,-13 7,-4 0,0Z" fill="white" transform="translate(73,41) rotate(30)"/>
+      </svg>
+      <div class="wm-text">
+        <strong>IPGS</strong>
+        <span>International Plant Grafting Society</span>
+      </div>
+    </div>
+    <p class="note">✦ Globe motif reinforces "International" at a glance. Works especially well on dark backgrounds and digital banners. Boldest choice — most distinctive at distance.</p>
+  </div>
+
+</div>
+
+<!-- Summary table -->
+<div style="max-width:1020px;margin:2rem auto 0;background:white;border-radius:14px;padding:1.5rem 1.75rem;box-shadow:0 2px 12px rgba(20,83,45,.07)">
+  <p style="font-weight:700;color:#14532d;font-size:.9rem;margin-bottom:1rem">Design summary — strengths at a glance</p>
+  <table style="width:100%;border-collapse:collapse;font-size:.78rem">
+    <thead>
+      <tr style="border-bottom:2px solid #e8ede8;color:#6b9e7b;text-align:left">
+        <th style="padding:.4rem .6rem">Variant</th>
+        <th style="padding:.4rem .6rem">Favicon (44px)</th>
+        <th style="padding:.4rem .6rem">Formality</th>
+        <th style="padding:.4rem .6rem">Best use</th>
+        <th style="padding:.4rem .6rem">Uniqueness</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #f0f4f0">
+        <td style="padding:.5rem .6rem;font-weight:600;color:#14532d">1 — Graft Fork</td>
+        <td style="padding:.5rem .6rem">★★★★★ Excellent</td>
+        <td style="padding:.5rem .6rem">Medium</td>
+        <td style="padding:.5rem .6rem">Website, app, publications</td>
+        <td style="padding:.5rem .6rem">Very high — grafting-specific</td>
+      </tr>
+      <tr style="border-bottom:1px solid #f0f4f0">
+        <td style="padding:.5rem .6rem;font-weight:600;color:#14532d">2 — Society Seal</td>
+        <td style="padding:.5rem .6rem">★★★☆☆ Good (simplified)</td>
+        <td style="padding:.5rem .6rem">High / formal</td>
+        <td style="padding:.5rem .6rem">Documents, certificates, stamps</td>
+        <td style="padding:.5rem .6rem">Medium — classic format</td>
+      </tr>
+      <tr style="border-bottom:1px solid #f0f4f0">
+        <td style="padding:.5rem .6rem;font-weight:600;color:#14532d">3 — Dual Leaf</td>
+        <td style="padding:.5rem .6rem">★★★★☆ Good</td>
+        <td style="padding:.5rem .6rem">Low / modern</td>
+        <td style="padding:.5rem .6rem">Header wordmark, digital banner</td>
+        <td style="padding:.5rem .6rem">High — abstract union</td>
+      </tr>
+      <tr>
+        <td style="padding:.5rem .6rem;font-weight:600;color:#14532d">4 — Globe Graft</td>
+        <td style="padding:.5rem .6rem">★★★★☆ Good</td>
+        <td style="padding:.5rem .6rem">Medium</td>
+        <td style="padding:.5rem .6rem">Social media, banners, website</td>
+        <td style="padding:.5rem .6rem">Very high — globe is memorable</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

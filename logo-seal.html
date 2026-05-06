@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IPGS Society Seal — Design Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+    background: #e8ede8; padding: 2.5rem 2rem 4rem; color: #1a2e1a;
+  }
+  .page-title { text-align:center; color:#14532d; font-size:1.6rem; font-weight:800; margin-bottom:.3rem; }
+  .page-sub   { text-align:center; color:#6b9e7b; font-size:.85rem; margin-bottom:2.5rem; letter-spacing:.03em; }
+
+  .row { display:flex; gap:2rem; max-width:1080px; margin:0 auto 2rem; flex-wrap:wrap; }
+  .card {
+    background:#fff; border-radius:18px; padding:2rem;
+    box-shadow:0 4px 24px rgba(20,83,45,.1); flex:1; min-width:260px;
+  }
+  .card-title { font-size:.95rem; font-weight:700; color:#14532d; margin-bottom:.25rem; }
+  .card-desc  { font-size:.75rem; color:#94a3b8; line-height:1.5; margin-bottom:1.5rem; }
+
+  .sizes { display:flex; align-items:flex-end; gap:1.75rem; flex-wrap:wrap; justify-content:center; }
+  .sz { text-align:center; }
+  .sz figcaption { font-size:.6rem; color:#b0bec5; margin-top:7px; display:block;
+                   text-transform:uppercase; letter-spacing:.05em; }
+  .on-dark { background:#14532d; border-radius:10px; padding:8px;
+             display:inline-block; line-height:0; }
+  .on-grey  { background:#5a6f5a; border-radius:10px; padding:8px;
+              display:inline-block; line-height:0; }
+  .on-white { border:1px solid #e8ede8; border-radius:10px; padding:8px;
+              display:inline-block; line-height:0; }
+
+  .wordmark {
+    display:flex; align-items:center; gap:.8rem;
+    background:#f5f8f5; border-radius:11px; padding:.9rem 1.15rem; margin-top:1.5rem;
+  }
+  .wm-text strong { display:block; font-size:1rem; font-weight:800; color:#14532d; letter-spacing:.05em; }
+  .wm-text span   { font-size:.62rem; font-weight:500; color:#6b9e7b; text-transform:uppercase; letter-spacing:.06em; }
+</style>
+</head>
+<body>
+
+<p class="page-title">IPGS — Society Seal (v3)</p>
+<p class="page-sub">Globe grid · twin gold rings · large graft symbol · perimeter text</p>
+
+<!-- ══ MASTER SVG SYMBOL — defined once, reused via <use> ══ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <defs>
+    <symbol id="ipgs-seal" viewBox="0 0 200 200">
+      <defs>
+        <!-- Clip globe grid to inner circle -->
+        <clipPath id="gc"><circle cx="100" cy="100" r="79"/></clipPath>
+
+        <!--
+          Text arc: clockwise (sweep=1) over the top, from 8-o'clock to 4-o'clock on r=87.5
+          8-o'clock (150° std): x=100+87.5·cos150°=24.2, y=100+87.5·sin150°=143.75
+          4-o'clock  (30° std): x=175.8, y=143.75
+          Arc length 240° @ r=87.5 = 366.5 px
+          font-size=10, letter-spacing=4 → text ≈ 356 px → startOffset=1.5% centres it
+        -->
+        <path id="sa" d="M24.2,143.75 A87.5,87.5 0 1,1 175.8,143.75"/>
+
+        <!-- Gold clip gradient (light top → dark bottom, 3-D effect) -->
+        <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#f5e070"/>
+          <stop offset="35%"  stop-color="#d4a020"/>
+          <stop offset="100%" stop-color="#8b5f10"/>
+        </linearGradient>
+      </defs>
+
+      <!-- ① Outer disc (deep green background for entire seal) -->
+      <circle cx="100" cy="100" r="97" fill="#0d4420"/>
+
+      <!-- ② Globe grid, clipped to inner circle (r=79) -->
+      <g clip-path="url(#gc)" fill="none" stroke="#1d6e38" stroke-width="1.1">
+        <!-- Longitude meridian ellipses -->
+        <ellipse cx="100" cy="100" rx="72" ry="79"/>
+        <ellipse cx="100" cy="100" rx="52" ry="79"/>
+        <ellipse cx="100" cy="100" rx="30" ry="79"/>
+        <ellipse cx="100" cy="100" rx="10" ry="79"/>
+        <!-- Latitude parallels -->
+        <line x1="10" y1="100" x2="190" y2="100" stroke-width="1.3"/><!-- equator -->
+        <line x1="10" y1="84"  x2="190" y2="84"/>
+        <line x1="10" y1="68"  x2="190" y2="68"/>
+        <line x1="10" y1="52"  x2="190" y2="52"/>
+        <line x1="10" y1="36"  x2="190" y2="36"/>
+        <line x1="10" y1="116" x2="190" y2="116"/>
+        <line x1="10" y1="132" x2="190" y2="132"/>
+        <line x1="10" y1="148" x2="190" y2="148"/>
+        <line x1="10" y1="164" x2="190" y2="164"/>
+      </g>
+
+      <!-- ③ Inner gold ring (separates text band from globe) -->
+      <circle cx="100" cy="100" r="79" fill="none" stroke="#c9a030" stroke-width="2.5"/>
+
+      <!-- ④ Outer gold ring border -->
+      <circle cx="100" cy="100" r="95" fill="none" stroke="#c9a030" stroke-width="3.5"/>
+
+      <!-- ⑤ Perimeter text -->
+      <text font-family="Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+            font-size="10" font-weight="700" fill="white" letter-spacing="4">
+        <textPath href="#sa" startOffset="1.5%">
+          INTERNATIONAL PLANT GRAFTING SOCIETY
+        </textPath>
+      </text>
+
+      <!-- ⑥ Bottom gap decoration: two gold dashes + three dots -->
+      <!-- Dashes follow the ring curvature at ~7-o'clock and ~5-o'clock -->
+      <line x1="34" y1="174" x2="56" y2="184"
+            stroke="#c9a030" stroke-width="2" stroke-linecap="round" opacity=".85"/>
+      <line x1="144" y1="184" x2="166" y2="174"
+            stroke="#c9a030" stroke-width="2" stroke-linecap="round" opacity=".85"/>
+      <!-- Three gold dots centred at 6-o'clock in the ring band -->
+      <circle cx="86"  cy="190" r="2.2" fill="#c9a030" opacity=".85"/>
+      <circle cx="100" cy="192" r="2.8" fill="#c9a030"/>
+      <circle cx="114" cy="190" r="2.2" fill="#c9a030" opacity=".85"/>
+
+      <!-- ⑦ "IPGS" — upper area of inner circle -->
+      <text x="100" y="52"
+            font-family="Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+            font-size="28" font-weight="800" fill="white"
+            text-anchor="middle" letter-spacing="3">IPGS</text>
+
+      <!-- ⑧ GRAFT SYMBOL -->
+
+      <!-- Scion stem — green rect from just below IPGS to gold clip -->
+      <rect x="96.5" y="55" width="7" height="46" rx="3.5" fill="#4ea055"/>
+
+      <!--
+        LEFT LEAF  — large, realistic, tip at (44,52), base on stem at (100,77)–(100,87)
+        Upper edge: concave sweep from stem to tip
+        Lower edge: convex bulge returning to stem — leaf is ~24 px wide at its widest
+      -->
+      <path d="M100,77 C84,66 60,54 44,52
+               C36,55 44,76 64,86
+               C78,91 98,89 100,87 Z"
+            fill="#5cc055"/>
+      <!-- Left leaf midrib -->
+      <path d="M100,82 Q72,68 44,52"
+            fill="none" stroke="#3a8040" stroke-width="1.5"
+            stroke-linecap="round" opacity=".6"/>
+
+      <!--
+        RIGHT LEAF — mirror of left about x=100, tip at (156,52)
+      -->
+      <path d="M100,77 C116,66 140,54 156,52
+               C164,55 156,76 136,86
+               C122,91 102,89 100,87 Z"
+            fill="#5cc055"/>
+      <!-- Right leaf midrib -->
+      <path d="M100,82 Q128,68 156,52"
+            fill="none" stroke="#3a8040" stroke-width="1.5"
+            stroke-linecap="round" opacity=".6"/>
+
+      <!-- Gold grafting clip (union band) with 3-D gradient -->
+      <rect x="84" y="99" width="32" height="18" rx="4.5" fill="url(#gg)"/>
+      <!-- Top sheen highlight -->
+      <rect x="84" y="99" width="32" height="7" rx="4.5" fill="#f8e890" opacity=".45"/>
+      <!-- Mid ridge line -->
+      <line x1="84" y1="110" x2="116" y2="110"
+            stroke="#7a5008" stroke-width="1" opacity=".35"/>
+
+      <!-- Rootstock stem — white rect from clip bottom to root base -->
+      <rect x="96.5" y="117" width="7" height="34" rx="3.5"
+            fill="rgba(255,255,255,0.93)"/>
+
+      <!-- Root system — all paths stay within r=79 of centre (100,100) -->
+      <g stroke-linecap="round" fill="none">
+        <!-- Outer left  (100,151)→(64,157) — dist from centre: sqrt(36²+57²)=67 ✓ -->
+        <path d="M100,151 C90,153 76,156 64,157"
+              stroke="rgba(255,255,255,.92)" stroke-width="3.2"/>
+        <!-- Inner left  →(80,160) dist=sqrt(20²+60²)=63 ✓ -->
+        <path d="M100,151 C96,154 90,158 80,160"
+              stroke="rgba(255,255,255,.92)" stroke-width="2.6"/>
+        <!-- Centre      →(100,162) dist=62 ✓ -->
+        <path d="M100,151 L100,162"
+              stroke="rgba(255,255,255,.92)" stroke-width="3.2"/>
+        <!-- Inner right →(120,160) ✓ -->
+        <path d="M100,151 C104,154 110,158 120,160"
+              stroke="rgba(255,255,255,.92)" stroke-width="2.6"/>
+        <!-- Outer right →(136,157) ✓ -->
+        <path d="M100,151 C110,153 124,156 136,157"
+              stroke="rgba(255,255,255,.92)" stroke-width="3.2"/>
+
+        <!-- Sub-branch left outer (64,157)→(58,162) dist=sqrt(42²+62²)=75 ✓ -->
+        <path d="M64,157 C62,159 60,161 58,162"
+              stroke="rgba(255,255,255,.72)" stroke-width="1.9"/>
+        <!-- Sub-branch left inner (80,160)→(74,165) dist=sqrt(26²+65²)=70 ✓ -->
+        <path d="M80,160 C78,162 76,164 74,165"
+              stroke="rgba(255,255,255,.72)" stroke-width="1.9"/>
+        <!-- Sub-branch right inner (120,160)→(126,165) ✓ -->
+        <path d="M120,160 C122,162 124,164 126,165"
+              stroke="rgba(255,255,255,.72)" stroke-width="1.9"/>
+        <!-- Sub-branch right outer (136,157)→(142,162) dist=sqrt(42²+62²)=75 ✓ -->
+        <path d="M136,157 C138,159 140,161 142,162"
+              stroke="rgba(255,255,255,.72)" stroke-width="1.9"/>
+      </g>
+
+      <!-- ⑨ "2026" — inside inner circle (y=173, cap top at ≈162, inner bottom at y=179) -->
+      <text x="100" y="173"
+            font-family="Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif"
+            font-size="16" font-weight="700" fill="rgba(255,255,255,0.92)"
+            text-anchor="middle" letter-spacing="4">2026</text>
+
+    </symbol>
+  </defs>
+</svg>
+
+
+<!-- ══ ROW 1: Size previews ══ -->
+<div class="row">
+  <div class="card">
+    <div class="card-title">Society Seal — All Sizes</div>
+    <div class="card-desc">Globe grid · twin gold rings · large graft symbol · perimeter text · 2026</div>
+    <div class="sizes">
+
+      <div class="sz">
+        <div class="on-white">
+          <svg width="200" height="200"><use href="#ipgs-seal"/></svg>
+        </div>
+        <figcaption>200 px · white</figcaption>
+      </div>
+
+      <div class="sz">
+        <div class="on-grey">
+          <svg width="120" height="120"><use href="#ipgs-seal"/></svg>
+        </div>
+        <figcaption>120 px · grey</figcaption>
+      </div>
+
+      <div class="sz">
+        <div class="on-dark">
+          <svg width="80" height="80"><use href="#ipgs-seal"/></svg>
+        </div>
+        <figcaption>80 px · dark</figcaption>
+      </div>
+
+      <div class="sz">
+        <div class="on-dark">
+          <svg width="44" height="44"><use href="#ipgs-seal"/></svg>
+        </div>
+        <figcaption>44 px favicon</figcaption>
+      </div>
+
+    </div>
+
+    <!-- Wordmark row -->
+    <div class="wordmark">
+      <svg width="52" height="52"><use href="#ipgs-seal"/></svg>
+      <div class="wm-text">
+        <strong>IPGS</strong>
+        <span>International Plant Grafting Society</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ ROW 2: Colour variants ══ -->
+<div class="row">
+
+  <div class="card">
+    <div class="card-title">On white background</div>
+    <div class="card-desc">As used on the website header and publications.</div>
+    <div style="display:flex;justify-content:center;padding:1rem;background:#fff;border-radius:10px;border:1px solid #e8ede8">
+      <svg width="180" height="180"><use href="#ipgs-seal"/></svg>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">On paper / cream background</div>
+    <div class="card-desc">For letterheads, certificates, and printed documents.</div>
+    <div style="display:flex;justify-content:center;padding:1rem;background:#f5f0e8;border-radius:10px;border:1px solid #e0d8c8">
+      <svg width="180" height="180"><use href="#ipgs-seal"/></svg>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">On dark green background</div>
+    <div class="card-desc">For banners, slides, email footers, and social media.</div>
+    <div style="display:flex;justify-content:center;padding:1rem;background:#14532d;border-radius:10px">
+      <svg width="180" height="180"><use href="#ipgs-seal"/></svg>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ══ ROW 3: Zoomed detail ══ -->
+<div class="row">
+  <div class="card" style="text-align:center">
+    <div class="card-title" style="text-align:left">Large display — detail view</div>
+    <div class="card-desc" style="text-align:left">For conference banners, posters, and certificates (300 px and above).</div>
+    <svg width="300" height="300"><use href="#ipgs-seal"/></svg>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Design notes (v3)</div>
+    <div class="card-desc" style="margin-bottom:0;line-height:1.9">
+      <strong style="color:#14532d">Ring structure</strong><br>
+      • Outer disc: #0d4420 — fills entire seal<br>
+      • Outer gold ring: r=95, stroke 3.5 px (#c9a030)<br>
+      • Inner gold ring: r=79, stroke 2.5 px — separates text band from globe<br>
+      • Text arc at r=87.5, font 10px/700, letter-spacing 4<br>
+      • Gold dashes + 3 dots close the bottom gap<br><br>
+      <strong style="color:#14532d">Inner circle content</strong><br>
+      • "IPGS" — 28 px bold white, letter-spacing 3<br>
+      • Scion stem (green rect) from IPGS → gold clip<br>
+      • Two leaves: left + right, midrib vein, #5cc055<br>
+      • Gold clip: 30 × 17 px, 3-D gradient (#f5e070 → #8b5f10)<br>
+      • Rootstock stem (white rect) → 5 spreading roots + sub-branches<br>
+      • "2026" — 16 px bold white<br><br>
+      <strong style="color:#14532d">Colours</strong><br>
+      • Globe deep green: #0d4420<br>
+      • Gold accent: #c9a030 (rings, clip, dots)<br>
+      • Leaf green: #5cc055 · Stem: #4ea055<br>
+      • All text: white
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
