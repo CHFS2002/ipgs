@@ -177,7 +177,7 @@
         </div>
 
         <div>
-          <form data-formspree="https://formspree.io/f/mzdykkoz" aria-label="IPGS membership application form">
+          <form data-formspree="https://formspree.io/f/mzdykkoz" enctype="multipart/form-data" aria-label="IPGS membership application form">
             <input type="hidden" name="_subject" value="IPGS Membership Application">
 
             <div class="form-row">
@@ -226,6 +226,13 @@
             <div class="field">
               <label for="j-statement">Research statement <span class="req">*</span></label>
               <textarea id="j-statement" name="research_statement" required rows="5" placeholder="Briefly describe your research interests, your institution's grafting-related work, and how you would contribute to IPGS (≤ 500 words)."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="j-cv">Curriculum Vitae <span style="font-weight:400;color:var(--ipgs-stone-500)">(optional — PDF, max 5 MB)</span></label>
+              <input id="j-cv" type="file" name="cv" accept=".pdf,application/pdf"
+                style="display:block;width:100%;padding:.55rem .75rem;border:1.5px solid var(--ipgs-stone-200);border-radius:var(--radius-md);background:var(--ipgs-white);font-size:.9rem;color:var(--ipgs-stone);cursor:pointer">
+              <p class="help-text" style="margin:.35rem 0 0;font-size:.8rem;color:var(--ipgs-stone-500)">PDF only. Shortlisted applicants may be asked to provide a full CV if not submitted here.</p>
             </div>
 
             <div class="field" style="display:flex;align-items:center;gap:.6rem">
