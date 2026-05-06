@@ -182,7 +182,8 @@
       <span class="eyebrow">Stay informed</span>
       <h2>The IPGS Annual Newsletter</h2>
       <p>An annual digest of Society news, calls for participation, and new Knowledge-Commons deposits.</p>
-      <form class="form-row" style="max-width:520px;margin:1.5rem auto 0" method="POST" action="https://3c2f556e.sibforms.com/serve/MUIFAOJTPWbZtEHARrGvgqXJPr7l8ea24dnuSRTDqkqF2P2crES8P7HfRaEiuITKRiBF8xwChUq2cjBBc6eTOZieaKdwN4RPmIjV0HRva8msxLSj8QH6Y5KivtlGqY03TeL3TfUlfCSe1QdWvktkl57kiOseFAO0Sq9U8J8MU-VK_nDEm0FQOaY7QoOzBFS9DDIdjcNWwNCd8neu" data-type="subscription" aria-label="Newsletter">
+      <iframe name="nl-sib-frame" style="display:none" aria-hidden="true"></iframe>
+      <form class="form-row" id="nl-form-home" style="max-width:520px;margin:1.5rem auto 0" method="POST" action="https://3c2f556e.sibforms.com/serve/MUIFAOJTPWbZtEHARrGvgqXJPr7l8ea24dnuSRTDqkqF2P2crES8P7HfRaEiuITKRiBF8xwChUq2cjBBc6eTOZieaKdwN4RPmIjV0HRva8msxLSj8QH6Y5KivtlGqY03TeL3TfUlfCSe1QdWvktkl57kiOseFAO0Sq9U8J8MU-VK_nDEm0FQOaY7QoOzBFS9DDIdjcNWwNCd8neu" target="nl-sib-frame" data-type="subscription" aria-label="Newsletter">
         <div class="field" style="grid-column:span 2">
           <label for="nl-email-home" class="sr-only">Email address</label>
           <input type="email" id="nl-email-home" name="EMAIL" placeholder="Institutional email address" required>
@@ -191,6 +192,7 @@
         <input type="text" name="email_address_check" value="" style="display:none">
         <input type="hidden" name="locale" value="en">
       </form>
+      <p id="nl-success-home" role="status" style="display:none;color:var(--ipgs-green);font-weight:600;margin-top:1rem">✓ Thank you — you're now subscribed to the IPGS Annual Newsletter.</p>
     </div>
   </section>
 

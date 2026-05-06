@@ -113,6 +113,24 @@
     });
   });
 
+  // --- Newsletter form: keep user on page after Brevo/SIB submit ---
+  // The form posts into a hidden <iframe> (target="nl-sib-frame") so the
+  // browser doesn't navigate away. We show an inline success message instead.
+  var nlForms = document.querySelectorAll('form[data-type="subscription"]');
+  nlForms.forEach(function (f) {
+    f.addEventListener('submit', function () {
+      var btn = f.querySelector('[type="submit"]');
+      if (btn) btn.disabled = true;
+      // Show success message after a brief delay (lets the POST fire first)
+      var successId = f.id ? f.id.replace('nl-form', 'nl-success') : null;
+      var successEl = successId ? document.getElementById(successId) : null;
+      setTimeout(function () {
+        f.style.display = 'none';
+        if (successEl) successEl.style.display = 'block';
+      }, 600);
+    });
+  });
+
   // --- Twemoji: render emoji flags consistently on Windows ---
   // Windows lacks system flag emoji support; Twemoji replaces all emoji
   // with platform-neutral SVG images served from jsDelivr CDN.
