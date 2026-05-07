@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css?v=4">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css">
 <style>
   /* Map container */
   #ipgs-world-map {
@@ -22,16 +21,6 @@
     overflow: hidden;
     background: var(--ipgs-green-100);
     margin-top: 2rem;
-  }
-  /* Override jsvectormap tooltip */
-  .jvm-tooltip {
-    font-family: var(--font-sans) !important;
-    font-size: .82rem !important;
-    padding: .35rem .75rem !important;
-    border-radius: var(--radius-sm) !important;
-    background: var(--ipgs-stone) !important;
-    color: #fff !important;
-    box-shadow: var(--shadow-md) !important;
   }
   /* Map legend */
   .map-legend {
@@ -435,72 +424,119 @@
 </footer>
 
 <script src="../js/main.js?v=4"></script>
-<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
 <script>
 (function () {
-  var markers = [
-    { name: 'HZAU-CHFS · Wuhan, China',                    coords: [30.47,  114.35] },
-    { name: 'Embrapa · Cruz das Almas, Brazil',             coords: [-12.67, -39.09] },
-    { name: 'University of Catania · Italy',                coords: [37.50,   15.09] },
-    { name: 'Politecnico di Milano · Italy',                coords: [45.46,    9.19] },
-    { name: 'CEBAS-CSIC · Murcia, Spain',                   coords: [37.99,   -1.13] },
-    { name: 'Aristotle University · Thessaloniki, Greece',  coords: [40.63,   22.96] },
-    { name: 'Erciyes University · Kayseri, Türkiye',        coords: [38.73,   35.50] },
-    { name: 'INRAE · France',                               coords: [47.00,    2.35] },
-    { name: 'Lincoln University · New Zealand',             coords: [-43.64, 172.47] },
-    { name: 'China Agricultural University · Beijing',      coords: [39.95,  116.20] },
-    { name: 'Zhejiang University · Hangzhou',               coords: [30.26,  120.15] },
-    { name: 'Northwest A&F University · Yangling',          coords: [34.27,  108.07] },
-    { name: 'Nanjing Agricultural University · Nanjing',    coords: [32.07,  118.87] },
-    { name: 'Qingdao Agricultural University · Qingdao',    coords: [36.40,  120.20] },
-    { name: 'Zhengzhou Fruit Research Institute, CAAS · Zhengzhou', coords: [34.75, 113.69] },
-    { name: 'Kyoto University · Kyoto, Japan',               coords: [35.03,  135.78] },
-    { name: 'SLU · Uppsala, Sweden',                         coords: [59.82,   17.65] },
-    { name: 'Shandong Agricultural University · Tai\'an',     coords: [36.19,  117.13] },
-    { name: 'Algraft Robot Technology · Hefei, China',        coords: [31.82,  117.23] }
+  var dom = document.getElementById('ipgs-world-map');
+  if (!dom) return;
+  var chart = echarts.init(dom);
+
+  /* ECharts uses [longitude, latitude] — opposite of jsvectormap */
+  var institutions = [
+    { name: 'HZAU-CHFS · Wuhan, China',                         value: [114.35,  30.47] },
+    { name: 'Embrapa · Cruz das Almas, Brazil',                  value: [-39.09, -12.67] },
+    { name: 'University of Catania · Italy',                     value: [ 15.09,  37.50] },
+    { name: 'Politecnico di Milano · Italy',                     value: [  9.19,  45.46] },
+    { name: 'CEBAS-CSIC · Murcia, Spain',                        value: [ -1.13,  37.99] },
+    { name: 'Aristotle University · Thessaloniki, Greece',       value: [ 22.96,  40.63] },
+    { name: 'Erciyes University · Kayseri, Türkiye',             value: [ 35.50,  38.73] },
+    { name: 'INRAE · France',                                    value: [  2.35,  47.00] },
+    { name: 'Lincoln University · New Zealand',                  value: [172.47, -43.64] },
+    { name: 'China Agricultural University · Beijing',           value: [116.20,  39.95] },
+    { name: 'Zhejiang University · Hangzhou',                    value: [120.15,  30.26] },
+    { name: 'Northwest A&F University · Yangling',               value: [108.07,  34.27] },
+    { name: 'Nanjing Agricultural University · Nanjing',         value: [118.87,  32.07] },
+    { name: 'Qingdao Agricultural University · Qingdao',         value: [120.20,  36.40] },
+    { name: 'Zhengzhou Fruit Research Institute, CAAS · Zhengzhou', value: [113.69, 34.75] },
+    { name: 'Kyoto University · Kyoto, Japan',                   value: [135.78,  35.03] },
+    { name: 'SLU · Uppsala, Sweden',                             value: [ 17.65,  59.82] },
+    { name: 'Shandong Agricultural University · Tai\'an',        value: [117.13,  36.19] },
+    { name: 'Algraft Robot Technology · Hefei, China',           value: [117.23,  31.82] }
+  ];
+
+  /* Country names as they appear in the DataV world GeoJSON */
+  var memberCountries = [
+    'China', 'Brazil', 'Italy', 'Spain', 'Greece',
+    'Turkey', 'France', 'New Zealand', 'Japan', 'Sweden'
   ];
 
   var memberLabels = {
-    CN: 'China', BR: 'Brazil', IT: 'Italy', ES: 'Spain',
-    GR: 'Greece', TR: 'Türkiye', FR: 'France', NZ: 'New Zealand',
-    JP: 'Japan', SE: 'Sweden'
+    'China': 'China', 'Brazil': 'Brazil', 'Italy': 'Italy',
+    'Spain': 'Spain', 'Greece': 'Greece', 'Turkey': 'Türkiye',
+    'France': 'France', 'New Zealand': 'New Zealand',
+    'Japan': 'Japan', 'Sweden': 'Sweden'
   };
 
-  new jsVectorMap({
-    selector: '#ipgs-world-map',
-    map: 'world',
-    backgroundColor: 'transparent',
-    zoomOnScroll: false,
-    regionsSelectable: false,
-    markersSelectable: false,
-    selectedRegions: ['CN', 'TW', 'BR', 'IT', 'ES', 'GR', 'TR', 'FR', 'NZ', 'JP', 'SE'],
-    regionStyle: {
-      initial:       { fill: '#d1dbd4', stroke: '#ffffff', strokeWidth: 0.5 },
-      hover:         { fill: '#4a7c59', fillOpacity: 1, cursor: 'default' },
-      selected:      { fill: '#14532d' },
-      selectedHover: { fill: '#1b6b3a', cursor: 'default' }
-    },
-    markers: markers,
-    markerStyle: {
-      initial: { fill: '#b8860b', stroke: '#ffffff', strokeWidth: 2, r: 6 },
-      hover:   { fill: '#d4a737', r: 8, cursor: 'pointer' }
-    },
-    onMarkerTooltipShow: function (event, tooltip, index) {
-      tooltip.innerHTML = '<strong>' + markers[index].name + '</strong>';
-    },
-    onRegionTooltipShow: function (event, tooltip, code) {
-      if (code === 'TW') {
-        tooltip.text('<strong>Taiwan Province of China</strong>', true);
-        return;
-      }
-      if (memberLabels[code]) {
-        tooltip.text('<strong>' + memberLabels[code] + '</strong> &nbsp;·&nbsp; Founding member country', true);
-      } else {
-        event.preventDefault();
-      }
-    }
-  });
+  function buildOption () {
+    var regionCfg = memberCountries.map(function (n) {
+      return {
+        name: n,
+        itemStyle: { areaColor: '#14532d' },
+        emphasis: { itemStyle: { areaColor: '#1b6b3a' }, label: { show: false } }
+      };
+    });
+
+    return {
+      backgroundColor: 'transparent',
+      tooltip: {
+        trigger: 'item',
+        backgroundColor: '#2d2520',
+        borderColor: '#2d2520',
+        padding: [5, 12],
+        textStyle: { color: '#fff', fontSize: 12, fontFamily: 'Inter, sans-serif' },
+        formatter: function (params) {
+          if (params.componentSubType === 'scatter') {
+            return '<strong>' + params.name + '</strong>';
+          }
+          var label = memberLabels[params.name];
+          if (label) {
+            return '<strong>' + label + '</strong> &nbsp;·&nbsp; Founding member country';
+          }
+          return false; /* suppress tooltip for non-member countries */
+        }
+      },
+      geo: {
+        map: 'world',
+        roam: false,
+        emphasis: { label: { show: false } },
+        select: { disabled: true },
+        regions: regionCfg,
+        itemStyle: {
+          areaColor: '#d1dbd4',
+          borderColor: '#ffffff',
+          borderWidth: 0.5
+        },
+        label: { show: false }
+      },
+      series: [{
+        type: 'scatter',
+        coordinateSystem: 'geo',
+        data: institutions,
+        symbolSize: 12,
+        cursor: 'pointer',
+        itemStyle: { color: '#b8860b', borderColor: '#ffffff', borderWidth: 2 },
+        emphasis: { itemStyle: { color: '#d4a737' }, scale: true }
+      }]
+    };
+  }
+
+  /*
+   * DataV world map — follows China's national cartographic standard (GB/T).
+   * Correctly shows: Taiwan as part of China, Aksai Chin as Chinese,
+   * and Kashmir per China–Pakistan aligned position.
+   */
+  fetch('https://geo.datav.aliyun.com/areas_v3/bound/world.json')
+    .then(function (r) { return r.json(); })
+    .then(function (worldJson) {
+      echarts.registerMap('world', worldJson);
+      chart.setOption(buildOption());
+    })
+    .catch(function () {
+      dom.style.cssText = 'display:flex;align-items:center;justify-content:center;color:var(--ipgs-stone-400);font-size:.875rem';
+      dom.textContent = 'Map unavailable';
+    });
+
+  window.addEventListener('resize', function () { chart.resize(); });
 }());
 </script>
 </body>
