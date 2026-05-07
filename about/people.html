@@ -525,7 +525,7 @@
    * Correctly shows: Taiwan as part of China, Aksai Chin as Chinese,
    * and Kashmir per China–Pakistan aligned position.
    */
-  fetch('https://geo.datav.aliyun.com/areas_v3/bound/world.json')
+  fetch('../assets/world.json')
     .then(function (r) { return r.json(); })
     .then(function (worldJson) {
       echarts.registerMap('world', worldJson);
